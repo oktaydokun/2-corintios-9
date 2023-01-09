@@ -1,0 +1,706 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "id": "SaJlWYAjufzfMwEhOBz3Q",
+      "type": "rectangle",
+      "x": 708,
+      "y": 204,
+      "width": 463.99999999999994,
+      "height": 127,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "cVXS91x5Bvlj82FPXVrcg"
+      ],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 615001435,
+      "version": 723,
+      "versionNonce": 227238107,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1673225846476,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "JxYsTGRqFaVeb1J-k946V",
+      "type": "text",
+      "x": 910,
+      "y": 171,
+      "width": 83,
+      "height": 24,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "cVXS91x5Bvlj82FPXVrcg"
+      ],
+      "roundness": null,
+      "seed": 942031861,
+      "version": 366,
+      "versionNonce": 1811672661,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1673225846476,
+      "link": null,
+      "locked": false,
+      "text": "Members",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 19,
+      "containerId": null,
+      "originalText": "Members"
+    },
+    {
+      "id": "p7rtk1dK2c_jLD68F9ppa",
+      "type": "text",
+      "x": 720,
+      "y": 237,
+      "width": 446,
+      "height": 72,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "cVXS91x5Bvlj82FPXVrcg"
+      ],
+      "roundness": null,
+      "seed": 527970293,
+      "version": 527,
+      "versionNonce": 1421905275,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "rh6lZRVJrUFGgYFjOPtF0",
+          "type": "arrow"
+        },
+        {
+          "id": "bZTuf9vYPckbtseWnXLro",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1673225846476,
+      "link": null,
+      "locked": false,
+      "text": "id             Varchar(14)    PK   \nname           Varchar(100)   NOT_NULL\ncongregated    Boolean        NOT_NULL",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 67,
+      "containerId": null,
+      "originalText": "id             Varchar(14)    PK   \nname           Varchar(100)   NOT_NULL\ncongregated    Boolean        NOT_NULL"
+    },
+    {
+      "id": "jx76D16xeWKTpyST2rk2Y",
+      "type": "rectangle",
+      "x": 324,
+      "y": 468,
+      "width": 590,
+      "height": 164,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "3zulPvlqd9X4PUTmnhUUj"
+      ],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1903497781,
+      "version": 1178,
+      "versionNonce": 11691669,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "rh6lZRVJrUFGgYFjOPtF0",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1673226107623,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "I5AH-KblZfP7aNyAHQJg8",
+      "type": "text",
+      "x": 521,
+      "y": 429,
+      "width": 71,
+      "height": 24,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "3zulPvlqd9X4PUTmnhUUj"
+      ],
+      "roundness": null,
+      "seed": 1506023323,
+      "version": 775,
+      "versionNonce": 662870875,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1673225846476,
+      "link": null,
+      "locked": false,
+      "text": "Offers",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 19,
+      "containerId": null,
+      "originalText": "Offers"
+    },
+    {
+      "id": "nORNgPHf2vr489_9lfBpj",
+      "type": "text",
+      "x": 335,
+      "y": 499,
+      "width": 574,
+      "height": 120,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "3zulPvlqd9X4PUTmnhUUj"
+      ],
+      "roundness": null,
+      "seed": 635372437,
+      "version": 1232,
+      "versionNonce": 2035344955,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "rh6lZRVJrUFGgYFjOPtF0",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1673226096309,
+      "link": null,
+      "locked": false,
+      "text": "id              Varchar(14)      PK\nmember_id       Varchar(14)      FK DEFAULT(NULL)\nvalue           Decimal          NOT_NULL\nreference_month Varchar(2)       NOT_NULL\nreference_year  Varchar(4)       NOT_NULL",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 115,
+      "containerId": null,
+      "originalText": "id              Varchar(14)      PK\nmember_id       Varchar(14)      FK DEFAULT(NULL)\nvalue           Decimal          NOT_NULL\nreference_month Varchar(2)       NOT_NULL\nreference_year  Varchar(4)       NOT_NULL"
+    },
+    {
+      "id": "Ezv6o_vEMmimyEcQGTHz8",
+      "type": "rectangle",
+      "x": 1317,
+      "y": 199,
+      "width": 487.99999999999994,
+      "height": 95.00000000000001,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "Kx-vzKdXl_3yXqML_hmXG"
+      ],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 132408795,
+      "version": 1416,
+      "versionNonce": 1269253115,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1673225969889,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "irq2Ea_P0MME4qX5QKU0Z",
+      "type": "text",
+      "x": 1468,
+      "y": 159,
+      "width": 165,
+      "height": 24,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "Kx-vzKdXl_3yXqML_hmXG"
+      ],
+      "roundness": null,
+      "seed": 593606997,
+      "version": 1119,
+      "versionNonce": 758696059,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1673225953644,
+      "link": null,
+      "locked": false,
+      "text": "Expenses_types",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 19,
+      "containerId": null,
+      "originalText": "Expenses_types"
+    },
+    {
+      "id": "JKUrD5S_ItOz7X1NyxVCm",
+      "type": "text",
+      "x": 1323,
+      "y": 225,
+      "width": 470,
+      "height": 48,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "Kx-vzKdXl_3yXqML_hmXG"
+      ],
+      "roundness": null,
+      "seed": 129036923,
+      "version": 1354,
+      "versionNonce": 1658406811,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "xCDegtA1YhD3I9w4HSqJL",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1673225940228,
+      "link": null,
+      "locked": false,
+      "text": "id              Varchar(14)     PK\nname            Varchar(100)    NOT_NULL",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 43,
+      "containerId": null,
+      "originalText": "id              Varchar(14)     PK\nname            Varchar(100)    NOT_NULL"
+    },
+    {
+      "id": "dnEiPw70nbms9Rah3OjFq",
+      "type": "rectangle",
+      "x": 1859,
+      "y": 455,
+      "width": 562.0000000000001,
+      "height": 186.99999999999991,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "93-g-EAd4YnnM-gbPPSov"
+      ],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1623241339,
+      "version": 1796,
+      "versionNonce": 653835509,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "xCDegtA1YhD3I9w4HSqJL",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1673226200436,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "ykLOMk20Xv1-3HlNa3NE8",
+      "type": "text",
+      "x": 2092,
+      "y": 418,
+      "width": 95,
+      "height": 24,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "93-g-EAd4YnnM-gbPPSov"
+      ],
+      "roundness": null,
+      "seed": 246810293,
+      "version": 1339,
+      "versionNonce": 1847874587,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1673226196429,
+      "link": null,
+      "locked": false,
+      "text": "Expenses",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 19,
+      "containerId": null,
+      "originalText": "Expenses"
+    },
+    {
+      "id": "oY7ct-G_-pKsIG0yqnljm",
+      "type": "text",
+      "x": 1867,
+      "y": 476,
+      "width": 516,
+      "height": 144,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "93-g-EAd4YnnM-gbPPSov"
+      ],
+      "roundness": null,
+      "seed": 1687857947,
+      "version": 1772,
+      "versionNonce": 1630543131,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "xCDegtA1YhD3I9w4HSqJL",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1673226222452,
+      "link": null,
+      "locked": false,
+      "text": "id              Varchar(14)      PK\nexpense_type_id Varchar(14)      FK NOT_NULL\ntitle           Varchar(100)     NOT_NULL\nvalue           Decimal          NOT_NULL\nreference_month Varchar(2)       NOT_NULL\nreference_year  Varchar(4)       NOT_NULL",
+      "fontSize": 20,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 139,
+      "containerId": null,
+      "originalText": "id              Varchar(14)      PK\nexpense_type_id Varchar(14)      FK NOT_NULL\ntitle           Varchar(100)     NOT_NULL\nvalue           Decimal          NOT_NULL\nreference_month Varchar(2)       NOT_NULL\nreference_year  Varchar(4)       NOT_NULL"
+    },
+    {
+      "id": "bZTuf9vYPckbtseWnXLro",
+      "type": "arrow",
+      "x": 1117.7397260273972,
+      "y": 328.4560145979965,
+      "width": 84.12905033635047,
+      "height": 131.5439854020035,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 2
+      },
+      "seed": 933890261,
+      "version": 1050,
+      "versionNonce": 2135987195,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1673226072644,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          84.12905033635047,
+          131.5439854020035
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": {
+        "elementId": "W8TBEpjMC-VTTh9ylbFGj",
+        "gap": 4.5,
+        "focus": -0.15471702111987684
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "rh6lZRVJrUFGgYFjOPtF0",
+      "type": "arrow",
+      "x": 724.8908339374846,
+      "y": 318.5906432748538,
+      "width": 99.72106780676495,
+      "height": 148.25442714768144,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 2
+      },
+      "seed": 284822549,
+      "version": 928,
+      "versionNonce": 1329562965,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1673226107941,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -99.72106780676495,
+          148.25442714768144
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "p7rtk1dK2c_jLD68F9ppa",
+        "gap": 9.590643274853807,
+        "focus": 0.7582901486937503
+      },
+      "endBinding": {
+        "elementId": "jx76D16xeWKTpyST2rk2Y",
+        "gap": 1.1549295774647887,
+        "focus": -0.14211698912163354
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "xCDegtA1YhD3I9w4HSqJL",
+      "type": "arrow",
+      "x": 1797.9456942359234,
+      "y": 289.29183430992634,
+      "width": 151.5961853836841,
+      "height": 159.39126428162285,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1904905397,
+      "version": 1159,
+      "versionNonce": 1284651067,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1673226200436,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          151.5961853836841,
+          159.39126428162285
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": {
+        "elementId": "dnEiPw70nbms9Rah3OjFq",
+        "gap": 6.31690140845086,
+        "focus": -0.25620977775278575
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "version": 1266,
+      "versionNonce": 1252982069,
+      "isDeleted": false,
+      "id": "W8TBEpjMC-VTTh9ylbFGj",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1037.5,
+      "y": 464.5,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 540.0000000000001,
+      "height": 164,
+      "seed": 423835035,
+      "groupIds": [
+        "Hmaa9m5lu9B8NGDasmvkT"
+      ],
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "bZTuf9vYPckbtseWnXLro",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1673226072644,
+      "link": null,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "version": 884,
+      "versionNonce": 409775189,
+      "isDeleted": false,
+      "id": "tZcX3B9_Vh_1UtNgKqxO0",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1234.5,
+      "y": 425.5,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 71,
+      "height": 24,
+      "seed": 2011743637,
+      "groupIds": [
+        "Hmaa9m5lu9B8NGDasmvkT"
+      ],
+      "roundness": null,
+      "boundElements": null,
+      "updated": 1673225867388,
+      "link": null,
+      "locked": false,
+      "fontSize": 20,
+      "fontFamily": 3,
+      "text": "Tithes",
+      "baseline": 19,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Tithes"
+    },
+    {
+      "type": "text",
+      "version": 1333,
+      "versionNonce": 1273325371,
+      "isDeleted": false,
+      "id": "iJyHOz3zg91_zgd0yWZac",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1048.5,
+      "y": 495.5,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 516,
+      "height": 120,
+      "seed": 1814022715,
+      "groupIds": [
+        "Hmaa9m5lu9B8NGDasmvkT"
+      ],
+      "roundness": null,
+      "boundElements": null,
+      "updated": 1673226068108,
+      "link": null,
+      "locked": false,
+      "fontSize": 20,
+      "fontFamily": 3,
+      "text": "id              Varchar(14)      PK\nmember_id       Varchar(14)      FK NOT_NULL\nvalue           Decimal          NOT_NULL\nreference_month Varchar(2)       NOT_NULL\nreference_year  Varchar(4)       NOT_NULL",
+      "baseline": 115,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "id              Varchar(14)      PK\nmember_id       Varchar(14)      FK NOT_NULL\nvalue           Decimal          NOT_NULL\nreference_month Varchar(2)       NOT_NULL\nreference_year  Varchar(4)       NOT_NULL"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#fff"
+  },
+  "files": {}
+}

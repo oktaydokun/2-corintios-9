@@ -8,9 +8,9 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "rootDir": "./server"
+    "rootDir": "src/server"
   },
   "include": [
-    "server/**/*",
+    "src/**/*.ts",
   ],
 }

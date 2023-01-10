@@ -1,19 +1,20 @@
 {
   "name": "2-corintios-9",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "src/main.js",
   "license": "MIT",
   "author": {
     "name": "Diogo Sant'Anna",
     "email": "diogosantanna08@gmail.com"
   },
   "scripts": {
-    "start": "electron .",
+    "start": "electron ./src/main.js",
     "migrate": "npx prisma migrate dev --name init"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "autoprefixer": "^10.4.13",
     "electron": "^22.0.0",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^26.0.0",
@@ -25,7 +26,7 @@
     "typescript": "*"
   },
   "prisma": {
-    "schema": "server/prisma/schema.prisma"
+    "schema": "src/server/prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^4.8.1"

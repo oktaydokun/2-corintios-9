@@ -3,19 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <link rel="stylesheet" href="global.css" type="text/css">
-    <link rel="stylesheet" href="./app/Menu/menu.css" type="text/css">
+    <link rel="stylesheet" href="styles/global.css" type="text/css">
     <title>2º Coríntios 9</title>
   </head>
   <body>
     <header id="menu-content" class="main-menu">
       <nav id="nav-menu">
         <ul class="main-menu-labels">
-          <li class="main-menu-label">Adicionar</li>
-          <li class="main-menu-label">Exibir</li>
+          <li class="main-menu-label">Adicionar
+            <ul class="sub-menu-labels main-menu-add">
+              <li id="add-member">Membro</li>
+              <li id="add-tithe">Dízimo</li>
+              <li id="add-offer">Oferta</li>
+              <li id="add-dispense-category">Categoria de Despesa</li>
+              <li id="add-dispense">Despesa</li>
+            </ul>
+          </li>
+          <li class="main-menu-label">Editar</li>
           <li class="main-menu-label">Relatórios</li>
           <li class="main-menu-label">Temas
-            <ul class="sub-menu-labels">
+            <ul class="sub-menu-labels main-menu-theme">
               <li id="light-theme">Claro</li>
               <li id="dark-theme">Escuro</li>
               <li id="system-theme" class="theme-selected">Sistema</li>
@@ -31,5 +38,6 @@
     </footer>
     <script src="./electron/renderer.js"></script>
     <script src="./app/Menu/index.js"></script>
+    <script id="main-script" src=""></script>
   </body>
 </html>

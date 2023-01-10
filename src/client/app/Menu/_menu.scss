@@ -33,7 +33,6 @@
 
 .sub-menu-labels {
   border-radius: 4px;
-  bottom: -75px;
   display: none;
   height: max-content;
   left: 0;
@@ -42,53 +41,61 @@
   position: absolute;
 }
 
+.main-menu-add {
+  bottom: -120px;
+}
+
+.main-menu-theme {
+  bottom: -75px;
+}
+
 .sub-menu-labels li {
   border-radius: 4px;
   cursor: pointer;
   padding: 4px;
-  width: 100px;
+  width: 160px;
 }
 
 .theme-selected {
-  background-color: var(--sky-500);
+  background-color: $sky-500;
 }
 
 @media (prefers-color-scheme: dark) {
   .main-menu {
-    background: var(--gray-900);
-    color: var(--gray-200);
+    background: $gray-900;
+    color: $gray-200;
   }
 
   .main-menu-label:hover {
-    background: var(--sky-500);
+    background: $sky-500;
   }
 
   .sub-menu-labels {
-    background: var(--gray-900);
-    color: var(--gray-200);
+    background: $gray-900;
+    color: $gray-200;
   }
 
   .sub-menu-labels li:hover {
-    background: var(--sky-500);
+    background: $sky-500;
   }
 }
 
 @media (prefers-color-scheme: light) {
   .main-menu {
-    background: var(--slate-500);
-    color: var(--gray-200);
+    background: $slate-500;
+    color: $gray-200;
   }
 
   .main-menu-label:hover {
-    background: var(--sky-500);
+    background: $sky-500;
   }
 
   .sub-menu-labels {
-    background: var(--slate-500);
-    color: var(--gray-200);
+    background: $slate-500;
+    color: $gray-200;
   }
 
   .sub-menu-labels li:hover {
-    background: var(--sky-500);
+    background: $sky-500;
   }
 }

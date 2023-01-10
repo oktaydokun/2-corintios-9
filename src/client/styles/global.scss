@@ -1,10 +1,6 @@
-:root {
-  --gray-200: #e5e7eb;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
-  --sky-500: #0ea5e9;
-  --slate-500: #64748b;
-}
+@import './colors';
+
+@import '../app/Menu/menu';
 
 * {
   margin: 0;
@@ -16,6 +12,10 @@ html, body {
   font-size: small;
   height: 100%;
   width: 100%;
+}
+
+.main {
+  padding-top: 40px;
 }
 
 .footer {
@@ -32,14 +32,14 @@ html, body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: var(--gray-800);
-    color: var(--gray-200);
+    background: $gray-800;
+    color: $gray-200;
   }
 }
 
 @media (prefers-color-scheme: light) {
   body {
-    background: var(--gray-200);
-    color: var(--gray-900);
+    background: $gray-200;
+    color: $gray-900;
   }
 }

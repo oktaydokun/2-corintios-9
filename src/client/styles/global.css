@@ -1,0 +1,136 @@
+.main-menu {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 9999;
+}
+
+.main-menu-logo {
+  height: 32px;
+  margin-right: 8px;
+}
+
+.main-menu nav {
+  margin-left: 8px;
+}
+
+.main-menu-labels {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.main-menu-label {
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 8px;
+  position: relative;
+}
+
+.sub-menu-labels {
+  border-radius: 4px;
+  display: none;
+  height: max-content;
+  left: 0;
+  list-style: none;
+  padding: 4px;
+  position: absolute;
+}
+
+.main-menu-add {
+  bottom: -120px;
+}
+
+.main-menu-theme {
+  bottom: -75px;
+}
+
+.sub-menu-labels li {
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px;
+  width: 160px;
+}
+
+.theme-selected {
+  background-color: #0ea5e9;
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-menu {
+    background: #111827;
+    color: #e5e7eb;
+  }
+  .main-menu-label:hover {
+    background: #0ea5e9;
+  }
+  .sub-menu-labels {
+    background: #111827;
+    color: #e5e7eb;
+  }
+  .sub-menu-labels li:hover {
+    background: #0ea5e9;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .main-menu {
+    background: #64748b;
+    color: #e5e7eb;
+  }
+  .main-menu-label:hover {
+    background: #0ea5e9;
+  }
+  .sub-menu-labels {
+    background: #64748b;
+    color: #e5e7eb;
+  }
+  .sub-menu-labels li:hover {
+    background: #0ea5e9;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: sans-serif;
+  font-size: small;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  padding-top: 40px;
+}
+
+.footer {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.6rem;
+  justify-content: center;
+  padding: 0.25rem 0;
+  position: absolute;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1f2937;
+    color: #e5e7eb;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background: #e5e7eb;
+    color: #111827;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */

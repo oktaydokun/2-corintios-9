@@ -1,0 +1,94 @@
+.main-menu {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 9999;
+}
+
+.main-menu-logo {
+  height: 32px;
+  margin-right: 8px;
+}
+
+.main-menu nav {
+  margin-left: 8px;
+}
+
+.main-menu-labels {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.main-menu-label {
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 8px;
+  position: relative;
+}
+
+.sub-menu-labels {
+  border-radius: 4px;
+  bottom: -75px;
+  display: none;
+  height: max-content;
+  left: 0;
+  list-style: none;
+  padding: 4px;
+  position: absolute;
+}
+
+.sub-menu-labels li {
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px;
+  width: 100px;
+}
+
+.theme-selected {
+  background-color: var(--sky-500);
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-menu {
+    background: var(--gray-900);
+    color: var(--gray-200);
+  }
+
+  .main-menu-label:hover {
+    background: var(--sky-500);
+  }
+
+  .sub-menu-labels {
+    background: var(--gray-900);
+    color: var(--gray-200);
+  }
+
+  .sub-menu-labels li:hover {
+    background: var(--sky-500);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .main-menu {
+    background: var(--slate-500);
+    color: var(--gray-200);
+  }
+
+  .main-menu-label:hover {
+    background: var(--sky-500);
+  }
+
+  .sub-menu-labels {
+    background: var(--slate-500);
+    color: var(--gray-200);
+  }
+
+  .sub-menu-labels li:hover {
+    background: var(--sky-500);
+  }
+}

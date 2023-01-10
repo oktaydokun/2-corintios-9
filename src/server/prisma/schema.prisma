@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Member {
+  id          String  @id
+  name        String
+  congregated Boolean @default(false)
+  Tithe       Tithe[]
+  Offer       Offer[]
+}
+
+model Tithe {
+  id              String @id
+  member_id       String
+  value           Float
+  reference_month String
+  reference_year  String
+  member          Member @relation(fields: [member_id], references: [id])
+}
+
+model Offer {
+  id              String  @id
+  member_id       String? @default("")
+  value           Float
+  reference_month String
+  reference_year  String
+  member          Member? @relation(fields: [member_id], references: [id])
+}
+
+model ExpenseType {
+  id      String    @id
+  name    String    @unique
+  Expense Expense[]
+}
+
+model Expense {
+  id              String      @id
+  expense_type_id String
+  title           String
+  value           Float
+  reference_month String
+  reference_year  String
+  expense_type    ExpenseType @relation(fields: [expense_type_id], references: [id])
+}

@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron')
 const path = require('path')
 const fs = require('fs')
+const prisma = require('../../server')
 
 function createApp () {
   const createWindow = () => {
@@ -36,6 +37,20 @@ function createApp () {
       const theme = fs.readFileSync(path.join(__dirname, 'theme.txt'), 'utf8')
       nativeTheme.themeSource = theme || 'system'
       return theme || 'system'
+    })
+
+    ipcMain.handle('dbMember:create', async (event, ...args) => {
+      prisma.member.create({
+        data: args[0]
+      })
+        .finally(async () => {
+          await prisma.$disconnect()
+        })
+    })
+
+    ipcMain.handle('idGen:gen', () => {
+      const id = (Date.now() * Math.round(Math.random() * (999 - 1) + 1)).toString(8)
+      return id
     })
   }
 

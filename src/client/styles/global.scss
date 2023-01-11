@@ -2,6 +2,8 @@
 
 @import '../app/Menu/menu';
 
+@import '../app/Screens/Add/Member/addMember';
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +17,13 @@ html, body {
 }
 
 .main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 60px);
+  justify-content: center;
   padding-top: 40px;
+  width: 100%;
 }
 
 .footer {
@@ -24,10 +32,31 @@ html, body {
   display: flex;
   flex-direction: column;
   font-size: 0.6rem;
+  height: 20px;
   justify-content: center;
-  padding: .25rem 0;
   position: absolute;
   width: 100%;
+}
+
+.toast {
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 16px 16px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: max-content;
+  z-index: 999;
+}
+
+.toast-error {
+  background-color: red;
+  color: $gray-200;
+}
+
+.toast-success {
+  background-color: seagreen;
+  color: $gray-200;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,11 +64,20 @@ html, body {
     background: $gray-800;
     color: $gray-200;
   }
+
+  .footer {
+    background-color: $gray-900;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   body {
     background: $gray-200;
     color: $gray-900;
+  }
+
+  .footer {
+    background-color: $slate-500;
+    color: $gray-200;
   }
 }

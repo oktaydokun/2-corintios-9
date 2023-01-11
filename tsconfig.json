@@ -11,6 +11,6 @@
     "rootDir": "src/server"
   },
   "include": [
-    "src/**/*.ts",
+    "src/**/*.ts", "src/server/index.js",
   ],
 }

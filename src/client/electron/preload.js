@@ -13,3 +13,11 @@ contextBridge.exposeInMainWorld('theme', {
   system: () => ipcRenderer.invoke('theme:system'),
   get: () => ipcRenderer.invoke('theme:get')
 })
+
+contextBridge.exposeInMainWorld('dbMember', {
+  create: async (data) => await ipcRenderer.invoke('dbMember:create', data)
+})
+
+contextBridge.exposeInMainWorld('idGen', {
+  gen: () => ipcRenderer.invoke('idGen:gen')
+})

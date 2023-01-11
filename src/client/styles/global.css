@@ -34,6 +34,8 @@
 .sub-menu-labels {
   border-radius: 4px;
   display: none;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   left: 0;
   list-style: none;
@@ -92,6 +94,143 @@
     background: #0ea5e9;
   }
 }
+.add-member-form {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-around;
+  width: 90%;
+}
+.add-member-form fieldset {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-evenly;
+  width: 85%;
+}
+.add-member-form fieldset div {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.add-member-form fieldset .add-member-title {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.add-member-form fieldset .name-label {
+  border-left: 4px solid #0ea5e9;
+  border-radius: 2px;
+  padding: 12px 8px;
+  width: 100%;
+}
+.add-member-form fieldset .name-label .name-input {
+  border: none;
+  width: 100%;
+}
+.add-member-form fieldset .name-label .name-input:focus {
+  outline: none;
+}
+.add-member-form fieldset .name-label .name-input::-moz-placeholder {
+  color: #1f2937;
+}
+.add-member-form fieldset .name-label .name-input:-ms-input-placeholder {
+  color: #1f2937;
+}
+.add-member-form fieldset .name-label .name-input::placeholder {
+  color: #1f2937;
+}
+.add-member-form fieldset .congregated-label {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.add-member-form fieldset .congregated-label::after {
+  bottom: -16px;
+  content: "* marque a caixa caso seja um membro congregado";
+  font-size: 0.75rem;
+  font-style: italic;
+  left: 0;
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.add-member-form .submit-button {
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  opacity: 0.9;
+  padding: 8px 12px;
+}
+.add-member-form .submit-button:hover {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .add-member-form {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-member-form fieldset .name-label {
+    background-color: white;
+  }
+  .add-member-form fieldset .name-label .name-input {
+    background-color: white;
+    color: #111827;
+  }
+  .add-member-form fieldset .name-label .name-input::-moz-placeholder {
+    color: #1f2937;
+  }
+  .add-member-form fieldset .name-label .name-input:-ms-input-placeholder {
+    color: #1f2937;
+  }
+  .add-member-form fieldset .name-label .name-input::placeholder {
+    color: #1f2937;
+  }
+  .add-member-form fieldset .congregated-label::after {
+    color: #e5e7eb;
+  }
+  .add-member-form .submit-button {
+    background-color: #0ea5e9;
+    color: #1f2937;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .add-member-form {
+    background-color: white;
+    color: #111827;
+  }
+  .add-member-form fieldset .name-label {
+    background-color: #111827;
+  }
+  .add-member-form fieldset .name-label .name-input {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-member-form fieldset .name-label .name-input::-moz-placeholder {
+    color: #e5e7eb;
+  }
+  .add-member-form fieldset .name-label .name-input:-ms-input-placeholder {
+    color: #e5e7eb;
+  }
+  .add-member-form fieldset .name-label .name-input::placeholder {
+    color: #e5e7eb;
+  }
+  .add-member-form fieldset .congregated-label::after {
+    color: #1f2937;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -105,7 +244,13 @@ html, body {
 }
 
 .main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 60px);
+  justify-content: center;
   padding-top: 40px;
+  width: 100%;
 }
 
 .footer {
@@ -114,10 +259,33 @@ html, body {
   display: flex;
   flex-direction: column;
   font-size: 0.6rem;
+  height: 20px;
   justify-content: center;
-  padding: 0.25rem 0;
   position: absolute;
   width: 100%;
+}
+
+.toast {
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 16px 16px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 999;
+}
+
+.toast-error {
+  background-color: red;
+  color: #e5e7eb;
+}
+
+.toast-success {
+  background-color: seagreen;
+  color: #e5e7eb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -125,12 +293,17 @@ html, body {
     background: #1f2937;
     color: #e5e7eb;
   }
+  .footer {
+    background-color: #111827;
+  }
 }
 @media (prefers-color-scheme: light) {
   body {
     background: #e5e7eb;
     color: #111827;
   }
-}
-
-/*# sourceMappingURL=global.css.map */
+  .footer {
+    background-color: #64748b;
+    color: #e5e7eb;
+  }
+}/*# sourceMappingURL=global.css.map */

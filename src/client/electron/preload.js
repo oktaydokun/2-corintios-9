@@ -10,5 +10,6 @@ contextBridge.exposeInMainWorld('versions', {
 contextBridge.exposeInMainWorld('theme', {
   light: () => ipcRenderer.invoke('theme:light'),
   dark: () => ipcRenderer.invoke('theme:dark'),
-  system: () => ipcRenderer.invoke('theme:system')
+  system: () => ipcRenderer.invoke('theme:system'),
+  get: () => ipcRenderer.invoke('theme:get')
 })

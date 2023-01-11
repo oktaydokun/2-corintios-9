@@ -1,3 +1,8 @@
+(async () => {
+  const theme = await window.theme.get()
+  document.getElementById(`${theme}-theme`).classList.add('theme-selected')
+})()
+
 const information = document.getElementById('info')
 // eslint-disable-next-line no-undef
 information.innerText = `Esta aplicação está usando Chrome (v${versions.chrome()}), Node.js (v${versions.node()}) e Electron (v${versions.electron()})`

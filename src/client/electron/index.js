@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron')
 const path = require('path')
+const fs = require('fs')
 
 function createApp () {
   const createWindow = () => {
@@ -18,16 +19,23 @@ function createApp () {
 
     ipcMain.handle('theme:light', () => {
       nativeTheme.themeSource = 'light'
-      return nativeTheme.shouldUseDarkColors
+      fs.writeFileSync(path.join(__dirname, 'theme.txt'), 'light')
     })
 
     ipcMain.handle('theme:dark', () => {
       nativeTheme.themeSource = 'dark'
-      return nativeTheme.shouldUseDarkColors
+      fs.writeFileSync(path.join(__dirname, 'theme.txt'), 'dark')
     })
 
     ipcMain.handle('theme:system', () => {
       nativeTheme.themeSource = 'system'
+      fs.writeFileSync(path.join(__dirname, 'theme.txt'), 'system')
+    })
+
+    ipcMain.handle('theme:get', () => {
+      const theme = fs.readFileSync(path.join(__dirname, 'theme.txt'), 'utf8')
+      nativeTheme.themeSource = theme || 'system'
+      return theme || 'system'
     })
   }
 

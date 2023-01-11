@@ -26,13 +26,13 @@ function toast ({
   })
 }
 
-const stateForm = {
+const stateAddMemberForm = {
   name: '',
   congregated: false
 }
 
 const saveMemberInDB = async () => {
-  const { name, congregated } = stateForm
+  const { name, congregated } = stateAddMemberForm
   const id = await window.idGen.gen()
   await window.dbMember.create({
     id,
@@ -52,9 +52,11 @@ function createNameField () {
   const nameInput = createElement('input', 'add-member-name-input', 'name-input')
   nameInput.setAttribute('type', 'text')
   nameInput.setAttribute('placeholder', 'Escreva o nome completo do membro aqui')
+  nameInput.setAttribute('required', true)
 
-  nameInput.addEventListener('change', (event) => {
-    stateForm.name = event.target.value
+  nameInput.addEventListener('keyup', (event) => {
+    stateAddMemberForm.name = event.target.value
+    event.target.value = stateAddMemberForm.name
   })
 
   const nameLabel = createElement('label', 'add-member-name-label', 'name-label')
@@ -69,7 +71,8 @@ function createCongregatedField () {
   congregatedInput.setAttribute('type', 'checkbox')
 
   congregatedInput.addEventListener('change', (event) => {
-    stateForm.congregated = event.target.checked
+    stateAddMemberForm.congregated = event.target.checked
+    event.target.checked = stateAddMemberForm.congregated
   })
 
   const congregatedLabel = createElement('label', 'add-member-congregated-label', 'congregated-label')
@@ -109,7 +112,7 @@ function createAddMemberScreen () {
   form.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    const { name } = stateForm
+    const { name } = stateAddMemberForm
 
     if (!name) {
       toast({
@@ -125,8 +128,8 @@ function createAddMemberScreen () {
       })
       document.getElementById('add-member-name-input').value = ''
       document.getElementById('add-member-congregated-input').checked = false
-      stateForm.name = ''
-      stateForm.congregated = false
+      stateAddMemberForm.name = ''
+      stateAddMemberForm.congregated = false
     }).catch((error) => {
       toast({
         text: `Erro ao cadastrar membro: ${error.message}`,

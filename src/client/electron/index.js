@@ -51,6 +51,7 @@ function createApp () {
       const id = (Date.now() * Math.round(Math.random() * (999 - 1) + 1)).toString(8)
       return id
     })
+
     // Member crud handles
     ipcMain.handle('dbMember:create', async (event, ...args) => {
       prisma.member.create({
@@ -68,6 +69,16 @@ function createApp () {
     // Tithe crud handles
     ipcMain.handle('dbTithe:create', async (event, ...args) => {
       prisma.tithe.create({
+        data: args[0]
+      })
+        .finally(async () => {
+          await prisma.$disconnect()
+        })
+    })
+
+    // Offer crud handles
+    ipcMain.handle('dbOffer:create', async (event, ...args) => {
+      prisma.offer.create({
         data: args[0]
       })
         .finally(async () => {

@@ -1,0 +1,165 @@
+.add-offer-form {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-around;
+  width: 90%;
+
+  fieldset {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    justify-content: space-evenly;
+    width: 85%;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      height: 60%;
+      justify-content: space-evenly;
+      width: 80%;
+    }
+
+    .add-offer-title {
+      font-size: xx-large;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    label {
+      align-items: center;
+      display: flex;
+      border-left: 4px solid $sky-500;
+      border-radius: 2px;
+      font-size: medium;
+    }
+
+    .member-id-label {
+      position: relative;
+      width: 60%;
+
+      .member-id-select {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &::after {
+        bottom: -15px;
+        content: "* selecione o membro em caso de ofertas especiais";
+        font-size: x-small;
+        font-style: italic;
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .value-label,
+    .month-label,
+    .year-label {
+      max-width: 300px;
+      min-width: 100px;
+      width: 20%;
+    }
+
+    .value-label {
+      padding-left: 8px;
+
+      .value-input {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .month-label {
+
+      .month-select {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .year-label {
+
+      .year-select {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .submit-button {
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 800;
+    opacity: 0.9;
+    padding: 8px 12px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .add-offer-form {
+    background-color: $gray-900;
+    color: $gray-200;
+
+    fieldset {
+      label {
+        background-color: white;
+        color: $gray-900;
+      }
+
+      input::placeholder,
+      select::placeholder {
+        color: $gray-800;
+      }
+
+      .member-id-label::after {
+        color: $gray-200;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .add-offer-form {
+    background-color: white;
+    color: $gray-900;
+
+    fieldset {
+
+      label,
+      input,
+      select {
+        background-color: $gray-900;
+        color: $gray-200;
+      }
+
+      input::placeholder,
+      select::placeholder {
+        color: $gray-200;
+      }
+    }
+  }
+}

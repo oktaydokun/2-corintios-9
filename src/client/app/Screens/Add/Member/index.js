@@ -89,7 +89,7 @@
 
     const fieldset = createElement('fieldset')
     const title = createElement('legend', 'add-member-screen-title', 'add-member-title')
-    title.innerText = 'Cadastrar novo membro'
+    title.innerText = 'Cadastrar Membro'
 
     const nameInput = createNameField()
 

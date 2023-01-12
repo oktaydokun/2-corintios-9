@@ -30,3 +30,7 @@ contextBridge.exposeInMainWorld('dbMember', {
 contextBridge.exposeInMainWorld('dbTithe', {
   create: async (data) => await ipcRenderer.invoke('dbTithe:create', data)
 })
+
+contextBridge.exposeInMainWorld('dbOffer', {
+  create: async (data) => await ipcRenderer.invoke('dbOffer:create', data)
+})

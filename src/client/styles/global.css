@@ -345,6 +345,143 @@
     color: #e5e7eb;
   }
 }
+.add-offer-form {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-around;
+  width: 90%;
+}
+.add-offer-form fieldset {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-evenly;
+  width: 85%;
+}
+.add-offer-form fieldset div {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.add-offer-form fieldset .add-offer-title {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.add-offer-form fieldset label {
+  align-items: center;
+  display: flex;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 2px;
+  font-size: medium;
+}
+.add-offer-form fieldset .member-id-label {
+  position: relative;
+  width: 60%;
+}
+.add-offer-form fieldset .member-id-label .member-id-select {
+  border: none;
+  width: 100%;
+}
+.add-offer-form fieldset .member-id-label .member-id-select:focus {
+  outline: none;
+}
+.add-offer-form fieldset .member-id-label::after {
+  bottom: -15px;
+  content: "* selecione o membro em caso de ofertas especiais";
+  font-size: x-small;
+  font-style: italic;
+  position: absolute;
+  right: 0;
+}
+.add-offer-form fieldset .value-label, .add-offer-form fieldset .month-label, .add-offer-form fieldset .year-label {
+  max-width: 300px;
+  min-width: 100px;
+  width: 20%;
+}
+.add-offer-form fieldset .value-label {
+  padding-left: 8px;
+}
+.add-offer-form fieldset .value-label .value-input {
+  border: none;
+  width: 100%;
+}
+.add-offer-form fieldset .value-label .value-input:focus {
+  outline: none;
+}
+.add-offer-form fieldset .month-label .month-select {
+  border: none;
+  width: 100%;
+}
+.add-offer-form fieldset .month-label .month-select:focus {
+  outline: none;
+}
+.add-offer-form fieldset .year-label .year-select {
+  border: none;
+  width: 100%;
+}
+.add-offer-form fieldset .year-label .year-select:focus {
+  outline: none;
+}
+.add-offer-form .submit-button {
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  opacity: 0.9;
+  padding: 8px 12px;
+}
+.add-offer-form .submit-button:hover {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .add-offer-form {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-offer-form fieldset label {
+    background-color: white;
+    color: #111827;
+  }
+  .add-offer-form fieldset input::-moz-placeholder, .add-offer-form fieldset select::-moz-placeholder {
+    color: #1f2937;
+  }
+  .add-offer-form fieldset input:-ms-input-placeholder, .add-offer-form fieldset select:-ms-input-placeholder {
+    color: #1f2937;
+  }
+  .add-offer-form fieldset input::placeholder, .add-offer-form fieldset select::placeholder {
+    color: #1f2937;
+  }
+  .add-offer-form fieldset .member-id-label::after {
+    color: #e5e7eb;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .add-offer-form {
+    background-color: white;
+    color: #111827;
+  }
+  .add-offer-form fieldset label, .add-offer-form fieldset input, .add-offer-form fieldset select {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-offer-form fieldset input::-moz-placeholder, .add-offer-form fieldset select::-moz-placeholder {
+    color: #e5e7eb;
+  }
+  .add-offer-form fieldset input:-ms-input-placeholder, .add-offer-form fieldset select:-ms-input-placeholder {
+    color: #e5e7eb;
+  }
+  .add-offer-form fieldset input::placeholder,
+.add-offer-form fieldset select::placeholder {
+    color: #e5e7eb;
+  }
+}
 * {
   margin: 0;
   padding: 0;

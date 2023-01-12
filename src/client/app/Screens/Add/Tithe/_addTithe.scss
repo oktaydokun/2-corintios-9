@@ -1,4 +1,4 @@
-.add-member-form {
+.add-tithe-form {
   align-items: center;
   border-radius: 8px;
   display: flex;
@@ -23,19 +23,25 @@
       width: 80%;
     }
 
-    .add-member-title {
+    .add-tithe-title {
       font-size: xx-large;
       font-weight: bold;
       text-align: center;
     }
 
-    .name-label {
+    label {
+      align-items: center;
+      display: flex;
       border-left: 4px solid $sky-500;
       border-radius: 2px;
+      font-size: medium;
       overflow: hidden;
-      width: 100%;
+    }
 
-      .name-input {
+    .member-id-label {
+      width: 60%;
+
+      .member-id-select {
         border: none;
         width: 100%;
 
@@ -43,26 +49,49 @@
           outline: none;
         }
       }
-
     }
 
-    .congregated-label {
-      align-items: center;
-      cursor: pointer;
-      display: flex;
-      gap: 8px;
-      position: relative;
-      width: max-content;
+    .value-label, .month-label, .year-label {
+      max-width: 300px;
+      min-width: 100px;
+      width: 20%;
     }
 
-    .congregated-label::after {
-      bottom: -16px;
-      content: "* marque a caixa caso não seja membro";
-      font-size: 0.75rem;
-      font-style: italic;
-      left: 0;
-      position: absolute;
-      width: max-content;
+    .value-label {
+      padding-left: 8px;
+
+      .value-input {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .month-label {
+
+      .month-select {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .year-label {
+
+      .year-select {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
   }
 
@@ -80,52 +109,37 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .add-member-form {
+  .add-tithe-form {
     background-color: $gray-900;
     color: $gray-200;
 
       fieldset {
-        .name-label {
+        label {
           background-color: white;
-
-            .name-input {
-              background-color: white;
-              color: $gray-900;
-
-              &::placeholder {
-                color: $gray-800;
-              }
-            }
+          color: $gray-900;
         }
 
-        .congregated-label::after {
-          color: $gray-200;
+        input::placeholder, select::placeholder {
+          color: $gray-800;
         }
       }
   }
 }
 
 @media (prefers-color-scheme: light) {
-  .add-member-form {
+  .add-tithe-form {
     background-color: white;
     color: $gray-900;
 
       fieldset {
-        .name-label {
+        label, input, select {
           background-color: $gray-900;
-
-          .name-input {
-            background-color: $gray-900;
-            color: $gray-200;
-
-            &::placeholder {
-              color: $gray-200;
-            }
-          }
+          color: $gray-200;
         }
 
-        .congregated-label::after {
-          color: $gray-800;
+        input::placeholder,
+        select::placeholder {
+          color: $gray-200;
         }
       }
   }

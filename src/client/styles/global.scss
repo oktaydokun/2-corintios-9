@@ -4,6 +4,8 @@
 
 @import '../app/Screens/Add/Member/addMember';
 
+@import '../app//Screens/Add/Tithe/addTithe';
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +26,24 @@ html, body {
   justify-content: center;
   padding-top: 40px;
   width: 100%;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: medium;
+  height: 36px;
+  padding-left: 8px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  width: 105%;
+}
+
+input {
+  font-size: medium;
+  height: 36px;
+  padding-left: 8px;
 }
 
 .footer {
@@ -65,6 +85,11 @@ html, body {
     color: $gray-200;
   }
 
+  .submit-button {
+    background-color: $sky-500;
+    color: $gray-800;
+  }
+
   .footer {
     background-color: $gray-900;
   }
@@ -74,6 +99,11 @@ html, body {
   body {
     background: $gray-200;
     color: $gray-900;
+  }
+
+  .submit-button {
+    background-color: $gray-900;
+    color: $gray-200;
   }
 
   .footer {

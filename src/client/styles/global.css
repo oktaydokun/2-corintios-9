@@ -127,7 +127,7 @@
 .add-member-form fieldset .name-label {
   border-left: 4px solid #0ea5e9;
   border-radius: 2px;
-  padding: 12px 8px;
+  overflow: hidden;
   width: 100%;
 }
 .add-member-form fieldset .name-label .name-input {
@@ -136,15 +136,6 @@
 }
 .add-member-form fieldset .name-label .name-input:focus {
   outline: none;
-}
-.add-member-form fieldset .name-label .name-input::-moz-placeholder {
-  color: #1f2937;
-}
-.add-member-form fieldset .name-label .name-input:-ms-input-placeholder {
-  color: #1f2937;
-}
-.add-member-form fieldset .name-label .name-input::placeholder {
-  color: #1f2937;
 }
 .add-member-form fieldset .congregated-label {
   align-items: center;
@@ -202,10 +193,6 @@
   .add-member-form fieldset .congregated-label::after {
     color: #e5e7eb;
   }
-  .add-member-form .submit-button {
-    background-color: #0ea5e9;
-    color: #1f2937;
-  }
 }
 @media (prefers-color-scheme: light) {
   .add-member-form {
@@ -232,6 +219,132 @@
     color: #1f2937;
   }
 }
+.add-tithe-form {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-around;
+  width: 90%;
+}
+.add-tithe-form fieldset {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-evenly;
+  width: 85%;
+}
+.add-tithe-form fieldset div {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.add-tithe-form fieldset .add-tithe-title {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.add-tithe-form fieldset label {
+  align-items: center;
+  display: flex;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 2px;
+  font-size: medium;
+  overflow: hidden;
+}
+.add-tithe-form fieldset .member-id-label {
+  width: 60%;
+}
+.add-tithe-form fieldset .member-id-label .member-id-select {
+  border: none;
+  width: 100%;
+}
+.add-tithe-form fieldset .member-id-label .member-id-select:focus {
+  outline: none;
+}
+.add-tithe-form fieldset .value-label, .add-tithe-form fieldset .month-label, .add-tithe-form fieldset .year-label {
+  max-width: 300px;
+  min-width: 100px;
+  width: 20%;
+}
+.add-tithe-form fieldset .value-label {
+  padding-left: 8px;
+}
+.add-tithe-form fieldset .value-label .value-input {
+  border: none;
+  width: 100%;
+}
+.add-tithe-form fieldset .value-label .value-input:focus {
+  outline: none;
+}
+.add-tithe-form fieldset .month-label .month-select {
+  border: none;
+  width: 100%;
+}
+.add-tithe-form fieldset .month-label .month-select:focus {
+  outline: none;
+}
+.add-tithe-form fieldset .year-label .year-select {
+  border: none;
+  width: 100%;
+}
+.add-tithe-form fieldset .year-label .year-select:focus {
+  outline: none;
+}
+.add-tithe-form .submit-button {
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  opacity: 0.9;
+  padding: 8px 12px;
+}
+.add-tithe-form .submit-button:hover {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .add-tithe-form {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-tithe-form fieldset label {
+    background-color: white;
+    color: #111827;
+  }
+  .add-tithe-form fieldset input::-moz-placeholder, .add-tithe-form fieldset select::-moz-placeholder {
+    color: #1f2937;
+  }
+  .add-tithe-form fieldset input:-ms-input-placeholder, .add-tithe-form fieldset select:-ms-input-placeholder {
+    color: #1f2937;
+  }
+  .add-tithe-form fieldset input::placeholder, .add-tithe-form fieldset select::placeholder {
+    color: #1f2937;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .add-tithe-form {
+    background-color: white;
+    color: #111827;
+  }
+  .add-tithe-form fieldset label, .add-tithe-form fieldset input, .add-tithe-form fieldset select {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-tithe-form fieldset input::-moz-placeholder, .add-tithe-form fieldset select::-moz-placeholder {
+    color: #e5e7eb;
+  }
+  .add-tithe-form fieldset input:-ms-input-placeholder, .add-tithe-form fieldset select:-ms-input-placeholder {
+    color: #e5e7eb;
+  }
+  .add-tithe-form fieldset input::placeholder,
+.add-tithe-form fieldset select::placeholder {
+    color: #e5e7eb;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -252,6 +365,25 @@ html, body {
   justify-content: center;
   padding-top: 40px;
   width: 100%;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  cursor: pointer;
+  font-size: medium;
+  height: 36px;
+  padding-left: 8px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  width: 105%;
+}
+
+input {
+  font-size: medium;
+  height: 36px;
+  padding-left: 8px;
 }
 
 .footer {
@@ -294,6 +426,10 @@ html, body {
     background: #1f2937;
     color: #e5e7eb;
   }
+  .submit-button {
+    background-color: #0ea5e9;
+    color: #1f2937;
+  }
   .footer {
     background-color: #111827;
   }
@@ -302,6 +438,10 @@ html, body {
   body {
     background: #e5e7eb;
     color: #111827;
+  }
+  .submit-button {
+    background-color: #111827;
+    color: #e5e7eb;
   }
   .footer {
     background-color: #64748b;

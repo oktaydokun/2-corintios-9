@@ -18,6 +18,14 @@ function createApp () {
 
     // Menu.setApplicationMenu(null)
 
+    ipcMain.handle('months:get', () => {
+      const months = fs.readFileSync(
+        path.join(__dirname, '../utils/months.txt'),
+        'utf8'
+      ).trimEnd()
+      return months.split('\n')
+    })
+
     ipcMain.handle('theme:light', () => {
       nativeTheme.themeSource = 'light'
       fs.writeFileSync(path.join(__dirname, 'theme.txt'), 'light')
@@ -39,6 +47,11 @@ function createApp () {
       return theme || 'system'
     })
 
+    ipcMain.handle('idGen:gen', () => {
+      const id = (Date.now() * Math.round(Math.random() * (999 - 1) + 1)).toString(8)
+      return id
+    })
+    // Member crud handles
     ipcMain.handle('dbMember:create', async (event, ...args) => {
       prisma.member.create({
         data: args[0]
@@ -48,9 +61,18 @@ function createApp () {
         })
     })
 
-    ipcMain.handle('idGen:gen', () => {
-      const id = (Date.now() * Math.round(Math.random() * (999 - 1) + 1)).toString(8)
-      return id
+    ipcMain.handle('dbMember:getAll', async () => {
+      return await prisma.member.findMany()
+    })
+
+    // Tithe crud handles
+    ipcMain.handle('dbTithe:create', async (event, ...args) => {
+      prisma.tithe.create({
+        data: args[0]
+      })
+        .finally(async () => {
+          await prisma.$disconnect()
+        })
     })
   }
 

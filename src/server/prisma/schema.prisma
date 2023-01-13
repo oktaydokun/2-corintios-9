@@ -36,18 +36,18 @@ model Offer {
   member          Member? @relation(fields: [member_id], references: [id])
 }
 
-model ExpenseType {
+model ExpenseCategory {
   id      String    @id
   name    String    @unique
   Expense Expense[]
 }
 
 model Expense {
-  id              String      @id
-  expense_type_id String
-  title           String
-  value           Float
-  reference_month String
-  reference_year  String
-  expense_type    ExpenseType @relation(fields: [expense_type_id], references: [id])
+  id                  String          @id
+  expense_category_id String
+  title               String
+  value               Float
+  reference_month     String
+  reference_year      String
+  expense_type        ExpenseCategory @relation(fields: [expense_category_id], references: [id])
 }

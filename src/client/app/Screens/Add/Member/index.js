@@ -113,16 +113,6 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault()
 
-      const { name } = stateAddMemberForm
-
-      if (!name) {
-        toast({
-          text: 'Preencha o nome do membro!',
-          type: 'error'
-        })
-        return
-      }
-
       saveMemberInDB().then(() => {
         toast({
           text: `Membro <strong>${name.split(' ')[0]}</strong> cadastrado com sucesso!`

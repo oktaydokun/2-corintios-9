@@ -34,3 +34,8 @@ contextBridge.exposeInMainWorld('dbTithe', {
 contextBridge.exposeInMainWorld('dbOffer', {
   create: async (data) => await ipcRenderer.invoke('dbOffer:create', data)
 })
+
+contextBridge.exposeInMainWorld('dbExpenseCategory', {
+  create: async (data) => await ipcRenderer.invoke('dbExpenseCategory:create', data),
+  getByName: async (name) => await ipcRenderer.invoke('dbExpenseCategory:getByName', name)
+})

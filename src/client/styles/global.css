@@ -400,7 +400,9 @@
   position: absolute;
   right: 0;
 }
-.add-offer-form fieldset .value-label, .add-offer-form fieldset .month-label, .add-offer-form fieldset .year-label {
+.add-offer-form fieldset .value-label,
+.add-offer-form fieldset .month-label,
+.add-offer-form fieldset .year-label {
   max-width: 300px;
   min-width: 100px;
   width: 20%;
@@ -455,7 +457,8 @@
   .add-offer-form fieldset input:-ms-input-placeholder, .add-offer-form fieldset select:-ms-input-placeholder {
     color: #1f2937;
   }
-  .add-offer-form fieldset input::placeholder, .add-offer-form fieldset select::placeholder {
+  .add-offer-form fieldset input::placeholder,
+.add-offer-form fieldset select::placeholder {
     color: #1f2937;
   }
   .add-offer-form fieldset .member-id-label::after {
@@ -467,7 +470,9 @@
     background-color: white;
     color: #111827;
   }
-  .add-offer-form fieldset label, .add-offer-form fieldset input, .add-offer-form fieldset select {
+  .add-offer-form fieldset label,
+.add-offer-form fieldset input,
+.add-offer-form fieldset select {
     background-color: #111827;
     color: #e5e7eb;
   }
@@ -479,6 +484,103 @@
   }
   .add-offer-form fieldset input::placeholder,
 .add-offer-form fieldset select::placeholder {
+    color: #e5e7eb;
+  }
+}
+.add-expense-category-form {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-around;
+  width: 90%;
+}
+.add-expense-category-form fieldset {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-evenly;
+  width: 85%;
+}
+.add-expense-category-form fieldset div {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.add-expense-category-form fieldset .add-expense-category-title {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.add-expense-category-form fieldset .name-label {
+  border-left: 4px solid #0ea5e9;
+  border-radius: 2px;
+  overflow: hidden;
+  width: 100%;
+}
+.add-expense-category-form fieldset .name-label .name-input {
+  border: none;
+  width: 100%;
+}
+.add-expense-category-form fieldset .name-label .name-input:focus {
+  outline: none;
+}
+.add-expense-category-form fieldset .submit-button {
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  opacity: 0.9;
+  padding: 8px 12px;
+}
+.add-expense-category-form fieldset .submit-button:hover {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .add-expense-category-form {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-expense-category-form fieldset .name-label {
+    background-color: white;
+  }
+  .add-expense-category-form fieldset .name-label .name-input {
+    background-color: white;
+    color: #111827;
+  }
+  .add-expense-category-form fieldset .name-label .name-input::-moz-placeholder {
+    color: #1f2937;
+  }
+  .add-expense-category-form fieldset .name-label .name-input:-ms-input-placeholder {
+    color: #1f2937;
+  }
+  .add-expense-category-form fieldset .name-label .name-input::placeholder {
+    color: #1f2937;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .add-expense-category-form {
+    background-color: white;
+    color: #111827;
+  }
+  .add-expense-category-form fieldset .name-label {
+    background-color: #111827;
+  }
+  .add-expense-category-form fieldset .name-label .name-input {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-expense-category-form fieldset .name-label .name-input::-moz-placeholder {
+    color: #e5e7eb;
+  }
+  .add-expense-category-form fieldset .name-label .name-input:-ms-input-placeholder {
+    color: #e5e7eb;
+  }
+  .add-expense-category-form fieldset .name-label .name-input::placeholder {
     color: #e5e7eb;
   }
 }

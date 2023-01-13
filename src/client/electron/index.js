@@ -85,6 +85,31 @@ function createApp () {
           await prisma.$disconnect()
         })
     })
+
+    // ExpenseCategory crud handles
+    ipcMain.handle('dbExpenseCategory:create', async (event, ...args) => {
+      prisma.expenseCategory.create({
+        data: args[0]
+      })
+        .finally(async () => {
+          await prisma.$disconnect()
+        })
+    })
+
+    ipcMain.handle('dbExpenseCategory:getByName', async (event, ...args) => {
+      const categories = await prisma.expenseCategory.findMany({
+        select: {
+          name: true,
+          id: false
+        }
+      })
+
+      const categoryAlreadyExists = categories.some(
+        category => category.name.toLocaleLowerCase() === args[0].toLocaleLowerCase()
+      )
+
+      return categoryAlreadyExists
+    })
   }
 
   return {

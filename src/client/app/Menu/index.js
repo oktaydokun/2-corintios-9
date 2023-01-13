@@ -34,8 +34,8 @@ function openScreen (src) {
 const ADD_MEMBER_SRC = './app/Screens/Add/Member/index.js'
 const ADD_TITHE_SRC = './app/Screens/Add/Tithe/index.js'
 const ADD_OFFER_SRC = './app/Screens/Add/Offer/index.js'
-const ADD_DISPENSE_CATEGORY_SRC = './app/Screens/Add/DispenseCategory/index.js'
-const ADD_DISPENSE_SRC = './app/Screens/Add/Dispense/index.js'
+const ADD_DISPENSE_CATEGORY_SRC = './app/Screens/Add/ExpenseCategory/index.js'
+const ADD_DISPENSE_SRC = './app/Screens/Add/Expense/index.js'
 
 document.getElementById('add-member')
   .addEventListener('click', () => {
@@ -52,12 +52,12 @@ document.getElementById('add-offer')
     openScreen(ADD_OFFER_SRC)
   })
 
-document.getElementById('add-dispense-category')
+document.getElementById('add-expense-category')
   .addEventListener('click', () => {
     openScreen(ADD_DISPENSE_CATEGORY_SRC)
   })
 
-document.getElementById('add-dispense')
+document.getElementById('add-expense')
   .addEventListener('click', () => {
     openScreen(ADD_DISPENSE_SRC)
   })

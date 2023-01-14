@@ -1,4 +1,4 @@
-.add-tithe-form {
+.add-expense-form {
   align-items: center;
   border-radius: 8px;
   display: flex;
@@ -23,7 +23,7 @@
       width: 80%;
     }
 
-    .add-tithe-title {
+    .add-expense-title {
       font-size: xx-large;
       font-weight: bold;
       text-align: center;
@@ -38,17 +38,8 @@
       overflow: hidden;
     }
 
-    .member-id-label {
+    .expense-category-id-label, .title-label {
       width: 60%;
-
-      .member-id-select {
-        border: none;
-        width: 100%;
-
-        &:focus {
-          outline: none;
-        }
-      }
     }
 
     .value-label, .month-label, .year-label {
@@ -57,58 +48,35 @@
       width: 20%;
     }
 
+    .expense-category-id-select, .title-input, .value-input, .month-select, .year-select {
+      border: none;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
     .value-label {
       padding-left: 8px;
       width: 19%;
-
-      .value-input {
-        border: none;
-        width: 100%;
-
-        &:focus {
-          outline: none;
-        }
-      }
-    }
-
-    .month-label {
-
-      .month-select {
-        border: none;
-        width: 100%;
-
-        &:focus {
-          outline: none;
-        }
-      }
-    }
-
-    .year-label {
-
-      .year-select {
-        border: none;
-        width: 100%;
-
-        &:focus {
-          outline: none;
-        }
-      }
     }
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .add-tithe-form {
+  .add-expense-form {
     background-color: $gray-900;
     color: $gray-200;
 
       fieldset {
-        label {
+        label, input, select {
           background-color: white;
           color: $gray-900;
         }
 
-        input::placeholder, select::placeholder {
+        input::placeholder,
+        select::placeholder {
           color: $gray-800;
         }
       }
@@ -116,20 +84,20 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .add-tithe-form {
+  .add-expense-form {
     background-color: white;
     color: $gray-900;
 
-      fieldset {
-        label, input, select {
-          background-color: $gray-900;
-          color: $gray-200;
-        }
-
-        input::placeholder,
-        select::placeholder {
-          color: $gray-200;
-        }
+    fieldset {
+      label, input, select {
+        background-color: $gray-900;
+        color: $gray-200;
       }
+
+      input::placeholder,
+      select::placeholder {
+        color: $gray-200;
+      }
+    }
   }
 }

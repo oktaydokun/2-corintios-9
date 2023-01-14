@@ -8,7 +8,6 @@ contextBridge.exposeInMainWorld('versions', {
   node: () => process.versions.node,
   chrome: () => process.versions.chrome,
   electron: () => process.versions.electron
-  // we can also expose variables, not just functions
 })
 
 contextBridge.exposeInMainWorld('theme', {
@@ -37,5 +36,10 @@ contextBridge.exposeInMainWorld('dbOffer', {
 
 contextBridge.exposeInMainWorld('dbExpenseCategory', {
   create: async (data) => await ipcRenderer.invoke('dbExpenseCategory:create', data),
-  getByName: async (name) => await ipcRenderer.invoke('dbExpenseCategory:getByName', name)
+  getByName: async (name) => await ipcRenderer.invoke('dbExpenseCategory:getByName', name),
+  getAll: async () => await ipcRenderer.invoke('dbExpenseCategory:getAll')
+})
+
+contextBridge.exposeInMainWorld('dbExpense', {
+  create: async (data) => await ipcRenderer.invoke('dbExpense:create', data)
 })

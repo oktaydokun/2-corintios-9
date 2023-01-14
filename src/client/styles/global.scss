@@ -8,7 +8,9 @@
 
 @import '../app/Screens/Add/Offer/addOffer';
 
-@import '../app/Screens/Add/ExpenseCategory/expenseCategory';
+@import '../app/Screens/Add/ExpenseCategory/addExpenseCategory';
+
+@import '../app/Screens/Add/Expense/addExpense';
 
 * {
   margin: 0;
@@ -48,6 +50,18 @@ input {
   font-size: medium;
   height: 36px;
   padding-left: 8px;
+}
+
+.submit-button {
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  opacity: 0.9;
+  padding: 8px 12px;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .footer {

@@ -158,16 +158,6 @@
   width: -moz-max-content;
   width: max-content;
 }
-.add-member-form .submit-button {
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 800;
-  opacity: 0.9;
-  padding: 8px 12px;
-}
-.add-member-form .submit-button:hover {
-  opacity: 1;
-}
 
 @media (prefers-color-scheme: dark) {
   .add-member-form {
@@ -273,6 +263,7 @@
 }
 .add-tithe-form fieldset .value-label {
   padding-left: 8px;
+  width: 19%;
 }
 .add-tithe-form fieldset .value-label .value-input {
   border: none;
@@ -294,16 +285,6 @@
 }
 .add-tithe-form fieldset .year-label .year-select:focus {
   outline: none;
-}
-.add-tithe-form .submit-button {
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 800;
-  opacity: 0.9;
-  padding: 8px 12px;
-}
-.add-tithe-form .submit-button:hover {
-  opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -409,6 +390,7 @@
 }
 .add-offer-form fieldset .value-label {
   padding-left: 8px;
+  width: 19%;
 }
 .add-offer-form fieldset .value-label .value-input {
   border: none;
@@ -430,16 +412,6 @@
 }
 .add-offer-form fieldset .year-label .year-select:focus {
   outline: none;
-}
-.add-offer-form .submit-button {
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 800;
-  opacity: 0.9;
-  padding: 8px 12px;
-}
-.add-offer-form .submit-button:hover {
-  opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -529,16 +501,6 @@
 .add-expense-category-form fieldset .name-label .name-input:focus {
   outline: none;
 }
-.add-expense-category-form .submit-button {
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 800;
-  opacity: 0.9;
-  padding: 8px 12px;
-}
-.add-expense-category-form .submit-button:hover {
-  opacity: 1;
-}
 
 @media (prefers-color-scheme: dark) {
   .add-expense-category-form {
@@ -584,6 +546,103 @@
     color: #e5e7eb;
   }
 }
+.add-expense-form {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: space-around;
+  width: 90%;
+}
+.add-expense-form fieldset {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  justify-content: space-evenly;
+  width: 85%;
+}
+.add-expense-form fieldset div {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.add-expense-form fieldset .add-expense-title {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+.add-expense-form fieldset label {
+  align-items: center;
+  display: flex;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 2px;
+  font-size: medium;
+  overflow: hidden;
+}
+.add-expense-form fieldset .expense-category-id-label, .add-expense-form fieldset .title-label {
+  width: 60%;
+}
+.add-expense-form fieldset .value-label, .add-expense-form fieldset .month-label, .add-expense-form fieldset .year-label {
+  max-width: 300px;
+  min-width: 100px;
+  width: 20%;
+}
+.add-expense-form fieldset .expense-category-id-select, .add-expense-form fieldset .title-input, .add-expense-form fieldset .value-input, .add-expense-form fieldset .month-select, .add-expense-form fieldset .year-select {
+  border: none;
+  width: 100%;
+}
+.add-expense-form fieldset .expense-category-id-select:focus, .add-expense-form fieldset .title-input:focus, .add-expense-form fieldset .value-input:focus, .add-expense-form fieldset .month-select:focus, .add-expense-form fieldset .year-select:focus {
+  outline: none;
+}
+.add-expense-form fieldset .value-label {
+  padding-left: 8px;
+  width: 19%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .add-expense-form {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-expense-form fieldset label, .add-expense-form fieldset input, .add-expense-form fieldset select {
+    background-color: white;
+    color: #111827;
+  }
+  .add-expense-form fieldset input::-moz-placeholder, .add-expense-form fieldset select::-moz-placeholder {
+    color: #1f2937;
+  }
+  .add-expense-form fieldset input:-ms-input-placeholder, .add-expense-form fieldset select:-ms-input-placeholder {
+    color: #1f2937;
+  }
+  .add-expense-form fieldset input::placeholder,
+.add-expense-form fieldset select::placeholder {
+    color: #1f2937;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .add-expense-form {
+    background-color: white;
+    color: #111827;
+  }
+  .add-expense-form fieldset label, .add-expense-form fieldset input, .add-expense-form fieldset select {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+  .add-expense-form fieldset input::-moz-placeholder, .add-expense-form fieldset select::-moz-placeholder {
+    color: #e5e7eb;
+  }
+  .add-expense-form fieldset input:-ms-input-placeholder, .add-expense-form fieldset select:-ms-input-placeholder {
+    color: #e5e7eb;
+  }
+  .add-expense-form fieldset input::placeholder,
+.add-expense-form fieldset select::placeholder {
+    color: #e5e7eb;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -623,6 +682,17 @@ input {
   font-size: medium;
   height: 36px;
   padding-left: 8px;
+}
+
+.submit-button {
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  opacity: 0.9;
+  padding: 8px 12px;
+}
+.submit-button:hover {
+  opacity: 1;
 }
 
 .footer {

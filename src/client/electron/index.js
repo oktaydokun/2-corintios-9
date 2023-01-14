@@ -110,6 +110,21 @@ function createApp () {
 
       return categoryAlreadyExists
     })
+
+    ipcMain.handle('dbExpenseCategory:getAll', async () => {
+      return await prisma.expenseCategory.findMany()
+    })
+
+    // Expense crud handles
+
+    ipcMain.handle('dbExpense:create', async (event, ...args) => {
+      prisma.expense.create({
+        data: args[0]
+      })
+        .finally(async () => {
+          await prisma.$disconnect()
+        })
+    })
   }
 
   return {

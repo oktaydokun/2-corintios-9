@@ -46,16 +46,17 @@
 
     }
 
-    .submit-button {
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 800;
-      opacity: 0.9;
-      padding: 8px 12px;
+  }
 
-      &:hover {
-        opacity: 1;
-      }
+  .submit-button {
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 800;
+    opacity: 0.9;
+    padding: 8px 12px;
+
+    &:hover {
+      opacity: 1;
     }
   }
 }

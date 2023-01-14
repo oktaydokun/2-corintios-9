@@ -529,14 +529,14 @@
 .add-expense-category-form fieldset .name-label .name-input:focus {
   outline: none;
 }
-.add-expense-category-form fieldset .submit-button {
+.add-expense-category-form .submit-button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: 800;
   opacity: 0.9;
   padding: 8px 12px;
 }
-.add-expense-category-form fieldset .submit-button:hover {
+.add-expense-category-form .submit-button:hover {
   opacity: 1;
 }
 

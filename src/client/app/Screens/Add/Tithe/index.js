@@ -1,28 +1,42 @@
 (() => {
+  // Ids
+  const TOAST_ID = 'toast'
+  const ADD_TITHE_SCREEN_FORM_ID = 'add-tithe-screen-form'
+  const ADD_TITHE_SCREEN_TITLE_ID = 'add-tithe-screen-title'
+  const ADD_TITHE_MEMBER_ID_LABEL_ID = 'add-tithe-member-id-label'
+  const ADD_TITHE_MEMBER_ID_SELECT_ID = 'add-tithe-member-id-select'
+  const ADD_TITHE_VALUE_LABEL_ID = 'add-tithe-value-label'
+  const ADD_TITHE_VALUE_INPUT_ID = 'add-tithe-value-input'
+  const ADD_TITHE_MONTH_LABEL_ID = 'add-tithe-month-label'
+  const ADD_TITHE_MONTH_SELECT_ID = 'add-tithe-month-select'
+  const ADD_TITHE_YEAR_LABEL_ID = 'add-tithe-year-label'
+  const ADD_TITHE_YEAR_SELECT_ID = 'add-tithe-year-select'
+  const ADD_TITHE_SUBMIT_BUTTON_ID = 'add-tithe-submit-button'
+
   function toast ({
     text,
     type = 'success',
     duration = 5000
   }) {
     const toast = document.createElement('div')
-    toast.id = 'toast'
+    toast.id = TOAST_ID
     toast.className = `toast toast-${type}`
 
     toast.innerHTML = text
 
     document.body.appendChild(toast)
     const ID = setTimeout(() => {
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     }, duration)
 
-    document.getElementById('toast').addEventListener('click', () => {
+    document.getElementById(TOAST_ID).addEventListener('click', () => {
       clearTimeout(ID)
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     })
 
     document.body.addEventListener('click', () => {
       clearTimeout(ID)
-      const toast = document.getElementById('toast')
+      const toast = document.getElementById(TOAST_ID)
       if (toast) toast.remove()
     })
   }
@@ -62,7 +76,7 @@
   }
 
   function createMemberIdField () {
-    const memberIdSelect = createElement('select', 'add-tithe-member-id-select', 'member-id-select')
+    const memberIdSelect = createElement('select', ADD_TITHE_MEMBER_ID_SELECT_ID, 'member-id-select')
     const firstOption = document.createElement('option')
     firstOption.value = ''
     firstOption.innerHTML = 'Selecione o membro'
@@ -76,15 +90,15 @@
       event.target.value = stateAddTitheForm.memberId
     })
 
-    const memberIdLabel = createElement('label', 'add-tithe-member-id-label', 'member-id-label')
-    memberIdLabel.setAttribute('for', 'add-tithe-member-id-select')
+    const memberIdLabel = createElement('label', ADD_TITHE_MEMBER_ID_LABEL_ID, 'member-id-label')
+    memberIdLabel.setAttribute('for', ADD_TITHE_MEMBER_ID_SELECT_ID)
     memberIdLabel.appendChild(memberIdSelect)
 
     return memberIdLabel
   }
 
   function createValueField () {
-    const valueInput = createElement('input', 'add-tithe-value-input', 'value-input')
+    const valueInput = createElement('input', ADD_TITHE_VALUE_INPUT_ID, 'value-input')
     valueInput.setAttribute('type', 'text')
     valueInput.setAttribute('placeholder', 'Valor do dízimo')
     valueInput.setAttribute('required', true)
@@ -108,8 +122,8 @@
       event.target.value = stateAddTitheForm.value
     })
 
-    const valueLabel = createElement('label', 'add-tithe-value-label', 'value-label')
-    valueLabel.setAttribute('for', 'add-tithe-value-input')
+    const valueLabel = createElement('label', ADD_TITHE_VALUE_LABEL_ID, 'value-label')
+    valueLabel.setAttribute('for', ADD_TITHE_VALUE_INPUT_ID)
     valueLabel.innerText = 'R$ '
     valueLabel.appendChild(valueInput)
 
@@ -117,7 +131,7 @@
   }
 
   function createMonthField () {
-    const monthSelect = createElement('select', 'add-tithe-month-select', 'month-select')
+    const monthSelect = createElement('select', ADD_TITHE_MONTH_SELECT_ID, 'month-select')
     const firstOption = document.createElement('option')
     firstOption.value = ''
     firstOption.innerHTML = 'Selecione o mês'
@@ -131,15 +145,15 @@
       event.target.value = stateAddTitheForm.referenceMonth
     })
 
-    const monthLabel = createElement('label', 'add-tithe-month-label', 'month-label')
-    monthLabel.setAttribute('for', 'add-tithe-month-select')
+    const monthLabel = createElement('label', ADD_TITHE_MONTH_LABEL_ID, 'month-label')
+    monthLabel.setAttribute('for', ADD_TITHE_MONTH_SELECT_ID)
     monthLabel.appendChild(monthSelect)
 
     return monthLabel
   }
 
   function createYearField () {
-    const yearSelect = createElement('select', 'add-tithe-year-select', 'year-select')
+    const yearSelect = createElement('select', ADD_TITHE_YEAR_SELECT_ID, 'year-select')
     const firstOption = document.createElement('option')
     firstOption.value = ''
     firstOption.innerHTML = 'Selecione o ano'
@@ -160,18 +174,18 @@
       event.target.value = stateAddTitheForm.referenceYear
     })
 
-    const yearLabel = createElement('label', 'add-tithe-year-label', 'year-label')
-    yearLabel.setAttribute('for', 'add-tithe-year-select')
+    const yearLabel = createElement('label', ADD_TITHE_YEAR_LABEL_ID, 'year-label')
+    yearLabel.setAttribute('for', ADD_TITHE_YEAR_SELECT_ID)
     yearLabel.appendChild(yearSelect)
 
     return yearLabel
   }
 
   function createAddTitheScreen () {
-    const form = createElement('form', 'add-tithe-screen-form', 'add-tithe-form')
+    const form = createElement('form', ADD_TITHE_SCREEN_FORM_ID, 'add-tithe-form')
 
     const fieldset = createElement('fieldset')
-    const title = createElement('legend', 'add-tithe-screen-title', 'add-tithe-title')
+    const title = createElement('legend', ADD_TITHE_SCREEN_TITLE_ID, 'add-tithe-title')
     title.innerText = 'Cadastrar Dízimo'
 
     const memberIdSelect = createMemberIdField()
@@ -182,7 +196,7 @@
 
     const yearSelect = createYearField()
 
-    const submitButton = createElement('button', 'add-tithe-submit-button', 'submit-button')
+    const submitButton = createElement('button', ADD_TITHE_SUBMIT_BUTTON_ID, 'submit-button')
     submitButton.setAttribute('type', 'submit')
     submitButton.innerText = 'CADASTRAR'
 
@@ -218,10 +232,10 @@
         toast({
           text: 'Dízimo cadastrado com sucesso!'
         })
-        document.getElementById('add-tithe-member-id-select').value = ''
-        document.getElementById('add-tithe-value-input').value = ''
-        document.getElementById('add-tithe-month-select').value = ''
-        document.getElementById('add-tithe-year-select').value = ''
+        document.getElementById(ADD_TITHE_MEMBER_ID_SELECT_ID).value = ''
+        document.getElementById(ADD_TITHE_VALUE_INPUT_ID).value = ''
+        document.getElementById(ADD_TITHE_MONTH_SELECT_ID).value = ''
+        document.getElementById(ADD_TITHE_YEAR_SELECT_ID).value = ''
         stateAddTitheForm.memberId = ''
         stateAddTitheForm.value = ''
         stateAddTitheForm.referenceMonth = ''
@@ -244,7 +258,7 @@
       const option = document.createElement('option')
       option.value = id
       option.innerHTML = `${id} - ${name}`
-      document.getElementById('add-tithe-member-id-select').appendChild(option)
+      document.getElementById(ADD_TITHE_MEMBER_ID_SELECT_ID).appendChild(option)
     })
   })
 
@@ -253,7 +267,7 @@
       const option = document.createElement('option')
       option.value = index + 1
       option.innerHTML = months[index]
-      document.getElementById('add-tithe-month-select').appendChild(option)
+      document.getElementById(ADD_TITHE_MONTH_SELECT_ID).appendChild(option)
     }
   })
 })()

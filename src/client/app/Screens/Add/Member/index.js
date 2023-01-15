@@ -1,28 +1,38 @@
 (() => {
+  // Ids
+  const TOAST_ID = 'toast'
+  const ADD_MEMBER_SCREEN_FORM_ID = 'add-member-screen-form'
+  const ADD_MEMBER_SCREEN_TITLE_ID = 'add-member-screen-title'
+  const ADD_MEMBER_NAME_LABEL_ID = 'add-member-name-label'
+  const ADD_MEMBER_NAME_INPUT_ID = 'add-member-name-input'
+  const ADD_MEMBER_CONGREGATED_LABEL_ID = 'add-member-congregated-label'
+  const ADD_MEMBER_CONGREGATED_INPUT_ID = 'add-member-congregated-input'
+  const ADD_MEMBER_SUBMIT_BUTTON_ID = 'add-member-submit-button'
+
   function toast ({
     text,
     type = 'success',
     duration = 5000
   }) {
     const toast = document.createElement('div')
-    toast.id = 'toast'
+    toast.id = TOAST_ID
     toast.className = `toast toast-${type}`
 
     toast.innerHTML = text
 
     document.body.appendChild(toast)
     const ID = setTimeout(() => {
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     }, duration)
 
-    document.getElementById('toast').addEventListener('click', () => {
+    document.getElementById(TOAST_ID).addEventListener('click', () => {
       clearTimeout(ID)
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     })
 
     document.body.addEventListener('click', () => {
       clearTimeout(ID)
-      const toast = document.getElementById('toast')
+      const toast = document.getElementById(TOAST_ID)
       if (toast) toast.remove()
     })
   }
@@ -50,7 +60,7 @@
   }
 
   function createNameField () {
-    const nameInput = createElement('input', 'add-member-name-input', 'name-input')
+    const nameInput = createElement('input', ADD_MEMBER_NAME_INPUT_ID, 'name-input')
     nameInput.setAttribute('type', 'text')
     nameInput.setAttribute('placeholder', 'Escreva o nome completo do membro aqui')
     nameInput.setAttribute('required', true)
@@ -60,15 +70,15 @@
       event.target.value = stateAddMemberForm.name
     })
 
-    const nameLabel = createElement('label', 'add-member-name-label', 'name-label')
-    nameLabel.setAttribute('for', 'add-member-name-input')
+    const nameLabel = createElement('label', ADD_MEMBER_NAME_LABEL_ID, 'name-label')
+    nameLabel.setAttribute('for', ADD_MEMBER_NAME_INPUT_ID)
     nameLabel.appendChild(nameInput)
 
     return nameLabel
   }
 
   function createCongregatedField () {
-    const congregatedInput = createElement('input', 'add-member-congregated-input', 'congregated-input')
+    const congregatedInput = createElement('input', ADD_MEMBER_CONGREGATED_INPUT_ID, 'congregated-input')
     congregatedInput.setAttribute('type', 'checkbox')
 
     congregatedInput.addEventListener('change', (event) => {
@@ -76,8 +86,8 @@
       event.target.checked = stateAddMemberForm.congregated
     })
 
-    const congregatedLabel = createElement('label', 'add-member-congregated-label', 'congregated-label')
-    congregatedLabel.setAttribute('for', 'add-member-congregated-input')
+    const congregatedLabel = createElement('label', ADD_MEMBER_CONGREGATED_LABEL_ID, 'congregated-label')
+    congregatedLabel.setAttribute('for', ADD_MEMBER_CONGREGATED_INPUT_ID)
     congregatedLabel.innerText = 'É Congregado? '
     congregatedLabel.appendChild(congregatedInput)
 
@@ -85,17 +95,17 @@
   }
 
   function createAddMemberScreen () {
-    const form = createElement('form', 'add-member-screen-form', 'add-member-form')
+    const form = createElement('form', ADD_MEMBER_SCREEN_FORM_ID, 'add-member-form')
 
     const fieldset = createElement('fieldset')
-    const title = createElement('legend', 'add-member-screen-title', 'add-member-title')
+    const title = createElement('legend', ADD_MEMBER_SCREEN_TITLE_ID, 'add-member-title')
     title.innerText = 'Cadastrar Membro'
 
     const nameInput = createNameField()
 
     const congregatedInput = createCongregatedField()
 
-    const submitButton = createElement('button', 'add-member-submit-button', 'submit-button')
+    const submitButton = createElement('button', ADD_MEMBER_SUBMIT_BUTTON_ID, 'submit-button')
     submitButton.setAttribute('type', 'submit')
     submitButton.innerText = 'CADASTRAR'
 
@@ -117,8 +127,8 @@
         toast({
           text: `Membro <strong>${name.split(' ')[0]}</strong> cadastrado com sucesso!`
         })
-        document.getElementById('add-member-name-input').value = ''
-        document.getElementById('add-member-congregated-input').checked = false
+        document.getElementById(ADD_MEMBER_NAME_INPUT_ID).value = ''
+        document.getElementById(ADD_MEMBER_CONGREGATED_INPUT_ID).checked = false
         stateAddMemberForm.name = ''
         stateAddMemberForm.congregated = false
       }).catch((error) => {

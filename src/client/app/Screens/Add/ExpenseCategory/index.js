@@ -1,28 +1,36 @@
 (() => {
+  // Ids
+  const TOAST_ID = 'toast'
+  const ADD_EXPENSE_CATEGORY_SCREEN_FORM_ID = 'add-expense-category-screen-form'
+  const ADD_EXPENSE_CATEGORY_SCREEN_TITLE_ID = 'add-expense-category-screen-title'
+  const ADD_EXPENSE_CATEGORY_NAME_LABEL_ID = 'add-expense-category-name-label'
+  const ADD_EXPENSE_CATEGORY_NAME_INPUT_ID = 'add-expense-category-name-input'
+  const ADD_EXPENSE_CATEGORY_SUBMIT_BUTTON_ID = 'add-expense-category-submit-button'
+
   function toast ({
     text,
     type = 'success',
     duration = 5000
   }) {
     const toast = document.createElement('div')
-    toast.id = 'toast'
+    toast.id = TOAST_ID
     toast.className = `toast toast-${type}`
 
     toast.innerHTML = text
 
     document.body.appendChild(toast)
     const ID = setTimeout(() => {
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     }, duration)
 
-    document.getElementById('toast').addEventListener('click', () => {
+    document.getElementById(TOAST_ID).addEventListener('click', () => {
       clearTimeout(ID)
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     })
 
     document.body.addEventListener('click', () => {
       clearTimeout(ID)
-      const toast = document.getElementById('toast')
+      const toast = document.getElementById(TOAST_ID)
       if (toast) toast.remove()
     })
   }
@@ -50,7 +58,7 @@
   }
 
   function createNameExpenseField () {
-    const nameExpenseInput = createElement('input', 'add-expense-category-name-input', 'name-input')
+    const nameExpenseInput = createElement('input', ADD_EXPENSE_CATEGORY_NAME_INPUT_ID, 'name-input')
     nameExpenseInput.setAttribute('type', 'text')
     nameExpenseInput.setAttribute('placeholder', 'Escreva o nome da categoria de despesa aqui')
     nameExpenseInput.setAttribute('required', true)
@@ -60,23 +68,23 @@
       event.target.value = stateAddExpenseCategoryForm.name
     })
 
-    const nameExpenseLabel = createElement('label', 'add-expense-category-name-label', 'name-label')
-    nameExpenseLabel.setAttribute('for', 'add-expense-category-name-input')
+    const nameExpenseLabel = createElement('label', ADD_EXPENSE_CATEGORY_NAME_LABEL_ID, 'name-label')
+    nameExpenseLabel.setAttribute('for', ADD_EXPENSE_CATEGORY_NAME_INPUT_ID)
     nameExpenseLabel.appendChild(nameExpenseInput)
 
     return nameExpenseLabel
   }
 
   function createAddExpenseCategoryScreen () {
-    const form = createElement('form', 'add-expense-category-screen-form', 'add-expense-category-form')
+    const form = createElement('form', ADD_EXPENSE_CATEGORY_SCREEN_FORM_ID, 'add-expense-category-form')
 
     const fieldset = createElement('fieldset')
-    const title = createElement('legend', 'add-expense-category-screen-title', 'add-expense-category-title')
+    const title = createElement('legend', ADD_EXPENSE_CATEGORY_SCREEN_TITLE_ID, 'add-expense-category-title')
     title.innerText = 'Cadastrar Categoria de Despesa'
 
     const nameExpenseInput = createNameExpenseField()
 
-    const submitButton = createElement('button', 'add-expense-category-submit-button', 'submit-button')
+    const submitButton = createElement('button', ADD_EXPENSE_CATEGORY_SUBMIT_BUTTON_ID, 'submit-button')
     submitButton.setAttribute('type', 'submit')
     submitButton.innerText = 'CADASTRAR'
 
@@ -97,7 +105,7 @@
         toast({
           text: 'Categoria de despesa cadastrada com sucesso!'
         })
-        document.getElementById('add-expense-category-name-input').value = ''
+        document.getElementById(ADD_EXPENSE_CATEGORY_NAME_INPUT_ID).value = ''
         stateAddExpenseCategoryForm.name = ''
       }).catch((error) => {
         toast({

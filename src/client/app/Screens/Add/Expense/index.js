@@ -1,28 +1,44 @@
 (() => {
+  // Ids
+  const TOAST_ID = 'toast'
+  const ADD_EXPENSE_SCREEN_FORM_ID = 'add-expense-screen-form'
+  const ADD_EXPENSE_SCREEN_TITLE_ID = 'add-expense-screen-title'
+  const ADD_EXPENSE_CATEGORY_ID_LABEL_ID = 'add-expense-category-id-label'
+  const ADD_EXPENSE_CATEGORY_ID_SELECT_ID = 'add-expense-category-id-select'
+  const ADD_EXPENSE_TITLE_LABEL_ID = 'add-expense-title-label'
+  const ADD_EXPENSE_TITLE_INPUT_ID = 'add-expense-title-input'
+  const ADD_EXPENSE_VALUE_LABEL_ID = 'add-expense-value-label'
+  const ADD_EXPENSE_VALUE_INPUT_ID = 'add-expense-value-input'
+  const ADD_EXPENSE_MONTH_LABEL_ID = 'add-expense-month-label'
+  const ADD_EXPENSE_MONTH_SELECT_ID = 'add-expense-month-select'
+  const ADD_EXPENSE_YEAR_LABEL_ID = 'add-expense-year-label'
+  const ADD_EXPENSE_YEAR_SELECT_ID = 'add-expense-year-select'
+  const ADD_EXPENSE_SCREEN_SUBMIT_BUTTON_ID = 'add-expense-screen-submit-button'
+
   function toast ({
     text,
     type = 'success',
     duration = 5000
   }) {
     const toast = document.createElement('div')
-    toast.id = 'toast'
+    toast.id = TOAST_ID
     toast.className = `toast toast-${type}`
 
     toast.innerHTML = text
 
     document.body.appendChild(toast)
     const ID = setTimeout(() => {
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     }, duration)
 
-    document.getElementById('toast').addEventListener('click', () => {
+    document.getElementById(TOAST_ID).addEventListener('click', () => {
       clearTimeout(ID)
-      document.getElementById('toast').remove()
+      document.getElementById(TOAST_ID).remove()
     })
 
     document.body.addEventListener('click', () => {
       clearTimeout(ID)
-      const toast = document.getElementById('toast')
+      const toast = document.getElementById(TOAST_ID)
       if (toast) toast.remove()
     })
   }
@@ -64,7 +80,7 @@
   }
 
   function createExpenseCategoryIdField () {
-    const expenseCategoryIdSelect = createElement('select', 'add-expense-category-id-select', 'expense-category-id-select')
+    const expenseCategoryIdSelect = createElement('select', ADD_EXPENSE_CATEGORY_ID_SELECT_ID, 'expense-category-id-select')
     const firstOption = document.createElement('option')
     firstOption.value = ''
     firstOption.innerHTML = 'Selecione a categoria da despesa'
@@ -78,15 +94,15 @@
       event.target.value = stateAddExpenseForm.expenseCategoryId
     })
 
-    const expenseCategoryIdLabel = createElement('label', 'add-expense-category-id-label', 'expense-category-id-label')
-    expenseCategoryIdLabel.setAttribute('for', 'add-expense-category-id-select')
+    const expenseCategoryIdLabel = createElement('label', ADD_EXPENSE_CATEGORY_ID_LABEL_ID, 'expense-category-id-label')
+    expenseCategoryIdLabel.setAttribute('for', ADD_EXPENSE_CATEGORY_ID_SELECT_ID)
     expenseCategoryIdLabel.appendChild(expenseCategoryIdSelect)
 
     return expenseCategoryIdLabel
   }
 
   function createTitleField () {
-    const titleInput = createElement('input', 'add-expense-title-input', 'title-input')
+    const titleInput = createElement('input', ADD_EXPENSE_TITLE_INPUT_ID, 'title-input')
     titleInput.setAttribute('type', 'text')
     titleInput.setAttribute('placeholder', 'Escreva um título para a despesa aqui')
     titleInput.setAttribute('required', true)
@@ -96,15 +112,15 @@
       event.target.value = stateAddExpenseForm.title
     })
 
-    const titleLabel = createElement('label', 'add-expense-title-label', 'title-label')
-    titleLabel.setAttribute('for', 'add-expense-title-input')
+    const titleLabel = createElement('label', ADD_EXPENSE_TITLE_LABEL_ID, 'title-label')
+    titleLabel.setAttribute('for', ADD_EXPENSE_TITLE_INPUT_ID)
     titleLabel.appendChild(titleInput)
 
     return titleLabel
   }
 
   function createValueField () {
-    const valueInput = createElement('input', 'add-expense-value-input', 'value-input')
+    const valueInput = createElement('input', ADD_EXPENSE_VALUE_INPUT_ID, 'value-input')
     valueInput.setAttribute('type', 'text')
     valueInput.setAttribute('placeholder', 'Valor da despesa')
     valueInput.setAttribute('required', true)
@@ -128,8 +144,8 @@
       event.target.value = stateAddExpenseForm.value
     })
 
-    const valueLabel = createElement('label', 'add-expense-value-label', 'value-label')
-    valueLabel.setAttribute('for', 'add-expense-value-input')
+    const valueLabel = createElement('label', ADD_EXPENSE_VALUE_LABEL_ID, 'value-label')
+    valueLabel.setAttribute('for', ADD_EXPENSE_VALUE_INPUT_ID)
     valueLabel.innerText = 'R$ '
     valueLabel.appendChild(valueInput)
 
@@ -137,7 +153,7 @@
   }
 
   function createMonthField () {
-    const monthSelect = createElement('select', 'add-expense-month-select', 'month-select')
+    const monthSelect = createElement('select', ADD_EXPENSE_MONTH_SELECT_ID, 'month-select')
     const firstOption = document.createElement('option')
     firstOption.value = ''
     firstOption.innerHTML = 'Selecione o mês'
@@ -151,15 +167,15 @@
       event.target.value = stateAddExpenseForm.referenceMonth
     })
 
-    const monthLabel = createElement('label', 'add-expense-month-label', 'month-label')
-    monthLabel.setAttribute('for', 'add-expense-month-select')
+    const monthLabel = createElement('label', ADD_EXPENSE_MONTH_LABEL_ID, 'month-label')
+    monthLabel.setAttribute('for', ADD_EXPENSE_MONTH_SELECT_ID)
     monthLabel.appendChild(monthSelect)
 
     return monthLabel
   }
 
   function createYearField () {
-    const yearSelect = createElement('select', 'add-expense-year-select', 'year-select')
+    const yearSelect = createElement('select', ADD_EXPENSE_YEAR_SELECT_ID, 'year-select')
     const firstOption = document.createElement('option')
     firstOption.value = ''
     firstOption.innerHTML = 'Selecione o ano'
@@ -180,18 +196,18 @@
       event.target.value = stateAddExpenseForm.referenceYear
     })
 
-    const yearLabel = createElement('label', 'add-expense-year-label', 'year-label')
-    yearLabel.setAttribute('for', 'add-expense-year-select')
+    const yearLabel = createElement('label', ADD_EXPENSE_YEAR_LABEL_ID, 'year-label')
+    yearLabel.setAttribute('for', ADD_EXPENSE_YEAR_SELECT_ID)
     yearLabel.appendChild(yearSelect)
 
     return yearLabel
   }
 
   function createAddExpenseScreen () {
-    const form = createElement('form', 'add-expense-screen-form', 'add-expense-form')
+    const form = createElement('form', ADD_EXPENSE_SCREEN_FORM_ID, 'add-expense-form')
 
     const fieldset = createElement('fieldset')
-    const title = createElement('legend', 'add-expense-screen-title', 'add-expense-title')
+    const title = createElement('legend', ADD_EXPENSE_SCREEN_TITLE_ID, 'add-expense-title')
     title.innerText = 'Cadastrar Despesa'
 
     const expenseCategoryIdSelect = createExpenseCategoryIdField()
@@ -204,7 +220,7 @@
 
     const yearSelect = createYearField()
 
-    const submitButton = createElement('button', 'add-expense-screen-submit-button', 'submit-button')
+    const submitButton = createElement('button', ADD_EXPENSE_SCREEN_SUBMIT_BUTTON_ID, 'submit-button')
     submitButton.setAttribute('type', 'submit')
     submitButton.innerText = 'CADASTRAR'
 
@@ -241,11 +257,11 @@
         toast({
           text: 'Despesa cadastrada com sucesso!'
         })
-        document.getElementById('add-expense-category-id-select').value = ''
-        document.getElementById('add-expense-title-input').value = ''
-        document.getElementById('add-expense-value-input').value = ''
-        document.getElementById('add-expense-month-select').value = ''
-        document.getElementById('add-expense-year-select').value = ''
+        document.getElementById(ADD_EXPENSE_CATEGORY_ID_SELECT_ID).value = ''
+        document.getElementById(ADD_EXPENSE_TITLE_INPUT_ID).value = ''
+        document.getElementById(ADD_EXPENSE_VALUE_INPUT_ID).value = ''
+        document.getElementById(ADD_EXPENSE_MONTH_SELECT_ID).value = ''
+        document.getElementById(ADD_EXPENSE_YEAR_SELECT_ID).value = ''
 
         stateAddExpenseForm.expenseCategoryId = ''
         stateAddExpenseForm.title = ''
@@ -270,7 +286,7 @@
       const option = document.createElement('option')
       option.value = id
       option.innerHTML = `${id} - ${name}`
-      document.getElementById('add-expense-category-id-select').appendChild(option)
+      document.getElementById(ADD_EXPENSE_CATEGORY_ID_SELECT_ID).appendChild(option)
     })
   })
 
@@ -279,7 +295,7 @@
       const option = document.createElement('option')
       option.value = index + 1
       option.innerHTML = months[index]
-      document.getElementById('add-expense-month-select').appendChild(option)
+      document.getElementById(ADD_EXPENSE_MONTH_SELECT_ID).appendChild(option)
     }
   })
 })()

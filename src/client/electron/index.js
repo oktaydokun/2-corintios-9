@@ -63,7 +63,7 @@ function createApp () {
     })
 
     ipcMain.handle('dbMember:getAll', async () => {
-      return await prisma.member.findMany()
+      return (await prisma.member.findMany()).sort((a, b) => a.name.localeCompare(b.name))
     })
 
     // Tithe crud handles
@@ -112,7 +112,7 @@ function createApp () {
     })
 
     ipcMain.handle('dbExpenseCategory:getAll', async () => {
-      return await prisma.expenseCategory.findMany()
+      return (await prisma.expenseCategory.findMany()).sort((a, b) => a.name.localeCompare(b.name))
     })
 
     // Expense crud handles

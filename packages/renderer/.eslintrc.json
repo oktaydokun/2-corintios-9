@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off"
+    }
+    }

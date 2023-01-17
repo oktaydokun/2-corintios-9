@@ -1,12 +1,11 @@
 {
-  "name": "vite-electron-builder",
-  "description": "Secure boilerplate for Electron app based on Vite",
-  "version": "1.0.2",
+  "name": "2-corintios-9",
+  "description": "App de Tesouraria",
+  "version": "0.0.1",
   "private": true,
   "author": {
-    "email": "kozackunisoft@gmail.com",
-    "name": "Alex Kozack",
-    "url": "https://kozack.me"
+    "email": "diogosantanna08@gmail.com",
+    "name": "Diogo Sant'Anna"
   },
   "main": "packages/main/dist/index.cjs",
   "scripts": {
@@ -21,36 +20,41 @@
     "test:preload": "vitest run -r packages/preload --passWithNoTests",
     "test:renderer": "vitest run -r packages/renderer --passWithNoTests",
     "watch": "node scripts/watch.mjs",
-    "lint": "eslint . --ext js,mjs,cjs,ts,mts,cts,vue",
+    "lint": "eslint . --ext js,mjs,cjs,ts,mts,cts",
     "typecheck:main": "tsc --noEmit -p packages/main/tsconfig.json",
     "typecheck:preload": "tsc --noEmit -p packages/preload/tsconfig.json",
-    "typecheck:renderer": "vue-tsc --noEmit -p packages/renderer/tsconfig.json",
+    "typecheck:renderer": "tsc --noEmit -p packages/renderer/tsconfig.json",
     "typecheck": "npm run typecheck:main && npm run typecheck:preload && npm run typecheck:renderer",
     "postinstall": "cross-env ELECTRON_RUN_AS_NODE=1 electron scripts/update-electron-vendors.mjs",
-    "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,vue,json}\""
+    "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,json}\""
   },
   "devDependencies": {
     "@types/node": "18.11.18",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "5.48.2",
-    "@vitejs/plugin-vue": "4.0.0",
-    "@vue/test-utils": "2.2.7",
+    "@vitejs/plugin-react": "^3.0.1",
+    "autoprefixer": "^10.4.13",
     "cross-env": "7.0.3",
     "electron": "22.0.2",
     "electron-builder": "23.6.0",
     "eslint": "8.32.0",
-    "eslint-plugin-vue": "9.9.0",
+    "eslint-plugin-react": "^7.32.1",
     "happy-dom": "8.1.4",
     "nano-staged": "0.8.0",
     "playwright": "1.29.2",
+    "postcss": "^8.4.21",
     "simple-git-hooks": "2.8.1",
+    "tailwindcss": "^3.2.4",
     "typescript": "4.9.4",
     "unplugin-auto-expose": "0.0.4",
     "vite": "4.0.4",
-    "vitest": "0.27.2",
-    "vue-tsc": "1.0.24"
+    "vite-plugin-svgr": "^2.4.0",
+    "vitest": "0.27.2"
   },
   "dependencies": {
     "electron-updater": "5.3.0",
-    "vue": "3.2.45"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

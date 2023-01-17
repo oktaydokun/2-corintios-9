@@ -7,7 +7,9 @@
     "skipLibCheck": true,
     "strict": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
     "types": ["node"],
     "baseUrl": ".",
     "paths": {

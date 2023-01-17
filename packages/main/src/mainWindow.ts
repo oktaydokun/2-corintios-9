@@ -14,6 +14,8 @@ async function createWindow() {
     },
   });
 
+  browserWindow.setIcon(join(app.getAppPath(), 'packages/renderer/assets/logo.ico'));
+
   /**
    * If the 'show' property of the BrowserWindow's constructor is omitted from the initialization options,
    * it then defaults to 'true'. This can cause flickering as the window loads the html content,
@@ -26,7 +28,7 @@ async function createWindow() {
     browserWindow?.show();
 
     if (import.meta.env.DEV) {
-      browserWindow?.webContents.openDevTools();
+      // browserWindow?.webContents.openDevTools();
     }
   });
 

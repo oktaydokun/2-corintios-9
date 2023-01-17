@@ -48,16 +48,26 @@
     referenceYear: ''
   }
 
+  function toggleDisabledSubmitButton () {
+    const submitButton = document.getElementById(ADD_TITHE_SUBMIT_BUTTON_ID)
+    submitButton.disabled = !submitButton.disabled
+  }
+
   async function saveTitheInDB () {
-    const { memberId, value, referenceMonth, referenceYear } = stateAddTitheForm
-    const id = await window.idGen.gen()
-    await window.dbTithe.create({
-      id,
-      member_id: memberId,
-      value: parseFloat(value),
-      reference_month: referenceMonth,
-      reference_year: referenceYear
-    })
+    try {
+      toggleDisabledSubmitButton()
+      const { memberId, value, referenceMonth, referenceYear } = stateAddTitheForm
+      const id = await window.idGen.gen()
+      await window.dbTithe.create({
+        id,
+        member_id: memberId,
+        value: parseFloat(value),
+        reference_month: referenceMonth,
+        reference_year: referenceYear
+      })
+    } finally {
+      toggleDisabledSubmitButton()
+    }
   }
 
   async function getRegisteredMembers () {

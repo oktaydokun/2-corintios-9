@@ -48,16 +48,26 @@
     referenceYear: ''
   }
 
+  function toggleDisabledSubmitButton () {
+    const submitButton = document.getElementById(ADD_OFFER_SUBMIT_BUTTON_ID)
+    submitButton.disabled = !submitButton.disabled
+  }
+
   async function saveOfferInDB () {
-    const { memberId, value, referenceMonth, referenceYear } = stateAddOfferForm
-    const id = await window.idGen.gen()
-    await window.dbOffer.create({
-      id,
-      member_id: memberId || null,
-      value: parseFloat(value),
-      reference_month: referenceMonth,
-      reference_year: referenceYear
-    })
+    try {
+      toggleDisabledSubmitButton()
+      const { memberId, value, referenceMonth, referenceYear } = stateAddOfferForm
+      const id = await window.idGen.gen()
+      await window.dbOffer.create({
+        id,
+        member_id: memberId || null,
+        value: parseFloat(value),
+        reference_month: referenceMonth,
+        reference_year: referenceYear
+      })
+    } finally {
+      toggleDisabledSubmitButton()
+    }
   }
 
   async function getRegisteredMembers () {

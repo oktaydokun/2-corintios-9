@@ -51,17 +51,27 @@
     referenceYear: ''
   }
 
+  function toggleDisabledSubmitButton () {
+    const submitButton = document.getElementById(ADD_EXPENSE_SCREEN_SUBMIT_BUTTON_ID)
+    submitButton.disabled = !submitButton.disabled
+  }
+
   async function saveExpenseInDB () {
-    const { expenseCategoryId, title, value, referenceMonth, referenceYear } = stateAddExpenseForm
-    const id = await window.idGen.gen()
-    await window.dbExpense.create({
-      id,
-      expense_category_id: expenseCategoryId,
-      title,
-      value: parseFloat(value),
-      reference_month: referenceMonth,
-      reference_year: referenceYear
-    })
+    try {
+      toggleDisabledSubmitButton()
+      const { expenseCategoryId, title, value, referenceMonth, referenceYear } = stateAddExpenseForm
+      const id = await window.idGen.gen()
+      await window.dbExpense.create({
+        id,
+        expense_category_id: expenseCategoryId,
+        title,
+        value: parseFloat(value),
+        reference_month: referenceMonth,
+        reference_year: referenceYear
+      })
+    } finally {
+      toggleDisabledSubmitButton()
+    }
   }
 
   async function getRegisteredExpenseCategories () {

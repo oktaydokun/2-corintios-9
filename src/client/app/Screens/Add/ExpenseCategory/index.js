@@ -39,15 +39,25 @@
     name: ''
   }
 
+  function toggleDisabledSubmitButton () {
+    const submitButton = document.getElementById(ADD_EXPENSE_CATEGORY_SUBMIT_BUTTON_ID)
+    submitButton.disabled = !submitButton.disabled
+  }
+
   const saveExpenseCategoryInDB = async () => {
-    const { name } = stateAddExpenseCategoryForm
-    const id = await window.idGen.gen()
-    const nameAlreadyExists = await window.dbExpenseCategory.getByName(name)
-    if (nameAlreadyExists) throw new Error('Já existe uma categoria de despesa com esse nome')
-    await window.dbExpenseCategory.create({
-      id,
-      name
-    })
+    try {
+      toggleDisabledSubmitButton()
+      const { name } = stateAddExpenseCategoryForm
+      const id = await window.idGen.gen()
+      const nameAlreadyExists = await window.dbExpenseCategory.getByName(name)
+      if (nameAlreadyExists) throw new Error('Já existe uma categoria de despesa com esse nome')
+      await window.dbExpenseCategory.create({
+        id,
+        name
+      })
+    } finally {
+      toggleDisabledSubmitButton()
+    }
   }
 
   function createElement (tagName, id = '', className = '') {

@@ -42,14 +42,24 @@
     congregated: false
   }
 
-  const saveMemberInDB = async () => {
-    const { name, congregated } = stateAddMemberForm
-    const id = await window.idGen.gen()
-    await window.dbMember.create({
-      id,
-      name,
-      congregated
-    })
+  function toggleDisabledSubmitButton () {
+    const submitButton = document.getElementById(ADD_MEMBER_SUBMIT_BUTTON_ID)
+    submitButton.disabled = !submitButton.disabled
+  }
+
+  async function saveMemberInDB () {
+    try {
+      toggleDisabledSubmitButton()
+      const { name, congregated } = stateAddMemberForm
+      const id = await window.idGen.gen()
+      await window.dbMember.create({
+        id,
+        name,
+        congregated
+      })
+    } finally {
+      toggleDisabledSubmitButton()
+    }
   }
 
   function createElement (tagName, id = '', className = '') {
@@ -124,6 +134,7 @@
       event.preventDefault()
 
       saveMemberInDB().then(() => {
+        const { name } = stateAddMemberForm
         toast({
           text: `Membro <strong>${name.split(' ')[0]}</strong> cadastrado com sucesso!`
         })
